@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="477_hw1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="477_hw1">
+				<Option output="/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug/477_hw1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/fatihyildiz/Desktop/477 hw1/Code Template"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 477_hw1"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="477_hw1/fast">
+				<Option output="/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug/477_hw1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/fatihyildiz/Desktop/477 hw1/Code Template"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 477_hw1/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/477\ hw1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/parser.cpp">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/parser.h">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/ppm.cpp">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/ppm.h">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/raytracer.cpp">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/simple.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/test.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/tinyxml2.cpp">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Code Template/tinyxml2.h">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Input Files/bunny.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Input Files/cornellbox.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Input Files/horse_and_mug.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Input Files/killeroo.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Input Files/mirror_spheres.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Input Files/simple.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Input Files/simple_reflectance.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Input Files/simple_shading.xml">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/bunny.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/cornellbox_front.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/cornellbox_inverse.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/cornellbox_top.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/horse_and_mug.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/killeroo.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/mirror_spheres.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/simple.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/simple_reflectance.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/Sample Scenes/Outputs/simple_shading.ppm">
+			<Option target="477_hw1"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/477 hw1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
