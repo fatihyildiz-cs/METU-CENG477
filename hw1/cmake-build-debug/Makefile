@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/fatihyildiz/Desktop/477 hw1"
+CMAKE_SOURCE_DIR = /Users/fatihyildiz/Desktop/METU-CENG477/hw1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/fatihyildiz/Desktop/METU-CENG477/hw1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug/CMakeFiles" "/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fatihyildiz/Desktop/METU-CENG477/hw1/cmake-build-debug/CMakeFiles /Users/fatihyildiz/Desktop/METU-CENG477/hw1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/fatihyildiz/Desktop/477 hw1/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fatihyildiz/Desktop/METU-CENG477/hw1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,125 +131,152 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 477_hw1
+# Target rules for targets named hw1
 
 # Build rule for target.
-477_hw1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 477_hw1
-.PHONY : 477_hw1
+hw1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hw1
+.PHONY : hw1
 
 # fast build rule for target.
-477_hw1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/build
-.PHONY : 477_hw1/fast
+hw1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/build
+.PHONY : hw1/fast
 
-Code_Template/parser.o: Code_Template/parser.cpp.o
+RayTracer/parser.o: RayTracer/parser.cpp.o
 
-.PHONY : Code_Template/parser.o
-
-# target to build an object file
-Code_Template/parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/parser.cpp.o
-.PHONY : Code_Template/parser.cpp.o
-
-Code_Template/parser.i: Code_Template/parser.cpp.i
-
-.PHONY : Code_Template/parser.i
-
-# target to preprocess a source file
-Code_Template/parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/parser.cpp.i
-.PHONY : Code_Template/parser.cpp.i
-
-Code_Template/parser.s: Code_Template/parser.cpp.s
-
-.PHONY : Code_Template/parser.s
-
-# target to generate assembly for a file
-Code_Template/parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/parser.cpp.s
-.PHONY : Code_Template/parser.cpp.s
-
-Code_Template/ppm.o: Code_Template/ppm.cpp.o
-
-.PHONY : Code_Template/ppm.o
+.PHONY : RayTracer/parser.o
 
 # target to build an object file
-Code_Template/ppm.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/ppm.cpp.o
-.PHONY : Code_Template/ppm.cpp.o
+RayTracer/parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/parser.cpp.o
+.PHONY : RayTracer/parser.cpp.o
 
-Code_Template/ppm.i: Code_Template/ppm.cpp.i
+RayTracer/parser.i: RayTracer/parser.cpp.i
 
-.PHONY : Code_Template/ppm.i
+.PHONY : RayTracer/parser.i
 
 # target to preprocess a source file
-Code_Template/ppm.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/ppm.cpp.i
-.PHONY : Code_Template/ppm.cpp.i
+RayTracer/parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/parser.cpp.i
+.PHONY : RayTracer/parser.cpp.i
 
-Code_Template/ppm.s: Code_Template/ppm.cpp.s
+RayTracer/parser.s: RayTracer/parser.cpp.s
 
-.PHONY : Code_Template/ppm.s
+.PHONY : RayTracer/parser.s
 
 # target to generate assembly for a file
-Code_Template/ppm.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/ppm.cpp.s
-.PHONY : Code_Template/ppm.cpp.s
+RayTracer/parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/parser.cpp.s
+.PHONY : RayTracer/parser.cpp.s
 
-Code_Template/raytracer.o: Code_Template/raytracer.cpp.o
+RayTracer/ppm.o: RayTracer/ppm.cpp.o
 
-.PHONY : Code_Template/raytracer.o
+.PHONY : RayTracer/ppm.o
 
 # target to build an object file
-Code_Template/raytracer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/raytracer.cpp.o
-.PHONY : Code_Template/raytracer.cpp.o
+RayTracer/ppm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/ppm.cpp.o
+.PHONY : RayTracer/ppm.cpp.o
 
-Code_Template/raytracer.i: Code_Template/raytracer.cpp.i
+RayTracer/ppm.i: RayTracer/ppm.cpp.i
 
-.PHONY : Code_Template/raytracer.i
+.PHONY : RayTracer/ppm.i
 
 # target to preprocess a source file
-Code_Template/raytracer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/raytracer.cpp.i
-.PHONY : Code_Template/raytracer.cpp.i
+RayTracer/ppm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/ppm.cpp.i
+.PHONY : RayTracer/ppm.cpp.i
 
-Code_Template/raytracer.s: Code_Template/raytracer.cpp.s
+RayTracer/ppm.s: RayTracer/ppm.cpp.s
 
-.PHONY : Code_Template/raytracer.s
+.PHONY : RayTracer/ppm.s
 
 # target to generate assembly for a file
-Code_Template/raytracer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/raytracer.cpp.s
-.PHONY : Code_Template/raytracer.cpp.s
+RayTracer/ppm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/ppm.cpp.s
+.PHONY : RayTracer/ppm.cpp.s
 
-Code_Template/tinyxml2.o: Code_Template/tinyxml2.cpp.o
+RayTracer/raytracer.o: RayTracer/raytracer.cpp.o
 
-.PHONY : Code_Template/tinyxml2.o
+.PHONY : RayTracer/raytracer.o
 
 # target to build an object file
-Code_Template/tinyxml2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/tinyxml2.cpp.o
-.PHONY : Code_Template/tinyxml2.cpp.o
+RayTracer/raytracer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/raytracer.cpp.o
+.PHONY : RayTracer/raytracer.cpp.o
 
-Code_Template/tinyxml2.i: Code_Template/tinyxml2.cpp.i
+RayTracer/raytracer.i: RayTracer/raytracer.cpp.i
 
-.PHONY : Code_Template/tinyxml2.i
+.PHONY : RayTracer/raytracer.i
 
 # target to preprocess a source file
-Code_Template/tinyxml2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/tinyxml2.cpp.i
-.PHONY : Code_Template/tinyxml2.cpp.i
+RayTracer/raytracer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/raytracer.cpp.i
+.PHONY : RayTracer/raytracer.cpp.i
 
-Code_Template/tinyxml2.s: Code_Template/tinyxml2.cpp.s
+RayTracer/raytracer.s: RayTracer/raytracer.cpp.s
 
-.PHONY : Code_Template/tinyxml2.s
+.PHONY : RayTracer/raytracer.s
 
 # target to generate assembly for a file
-Code_Template/tinyxml2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/477_hw1.dir/build.make CMakeFiles/477_hw1.dir/Code_Template/tinyxml2.cpp.s
-.PHONY : Code_Template/tinyxml2.cpp.s
+RayTracer/raytracer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/raytracer.cpp.s
+.PHONY : RayTracer/raytracer.cpp.s
+
+RayTracer/tinyxml2.o: RayTracer/tinyxml2.cpp.o
+
+.PHONY : RayTracer/tinyxml2.o
+
+# target to build an object file
+RayTracer/tinyxml2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/tinyxml2.cpp.o
+.PHONY : RayTracer/tinyxml2.cpp.o
+
+RayTracer/tinyxml2.i: RayTracer/tinyxml2.cpp.i
+
+.PHONY : RayTracer/tinyxml2.i
+
+# target to preprocess a source file
+RayTracer/tinyxml2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/tinyxml2.cpp.i
+.PHONY : RayTracer/tinyxml2.cpp.i
+
+RayTracer/tinyxml2.s: RayTracer/tinyxml2.cpp.s
+
+.PHONY : RayTracer/tinyxml2.s
+
+# target to generate assembly for a file
+RayTracer/tinyxml2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/tinyxml2.cpp.s
+.PHONY : RayTracer/tinyxml2.cpp.s
+
+RayTracer/vectorOperations.o: RayTracer/vectorOperations.cpp.o
+
+.PHONY : RayTracer/vectorOperations.o
+
+# target to build an object file
+RayTracer/vectorOperations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/vectorOperations.cpp.o
+.PHONY : RayTracer/vectorOperations.cpp.o
+
+RayTracer/vectorOperations.i: RayTracer/vectorOperations.cpp.i
+
+.PHONY : RayTracer/vectorOperations.i
+
+# target to preprocess a source file
+RayTracer/vectorOperations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/vectorOperations.cpp.i
+.PHONY : RayTracer/vectorOperations.cpp.i
+
+RayTracer/vectorOperations.s: RayTracer/vectorOperations.cpp.s
+
+.PHONY : RayTracer/vectorOperations.s
+
+# target to generate assembly for a file
+RayTracer/vectorOperations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw1.dir/build.make CMakeFiles/hw1.dir/RayTracer/vectorOperations.cpp.s
+.PHONY : RayTracer/vectorOperations.cpp.s
 
 # Help Target
 help:
@@ -259,19 +286,22 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 477_hw1"
-	@echo "... Code_Template/parser.o"
-	@echo "... Code_Template/parser.i"
-	@echo "... Code_Template/parser.s"
-	@echo "... Code_Template/ppm.o"
-	@echo "... Code_Template/ppm.i"
-	@echo "... Code_Template/ppm.s"
-	@echo "... Code_Template/raytracer.o"
-	@echo "... Code_Template/raytracer.i"
-	@echo "... Code_Template/raytracer.s"
-	@echo "... Code_Template/tinyxml2.o"
-	@echo "... Code_Template/tinyxml2.i"
-	@echo "... Code_Template/tinyxml2.s"
+	@echo "... hw1"
+	@echo "... RayTracer/parser.o"
+	@echo "... RayTracer/parser.i"
+	@echo "... RayTracer/parser.s"
+	@echo "... RayTracer/ppm.o"
+	@echo "... RayTracer/ppm.i"
+	@echo "... RayTracer/ppm.s"
+	@echo "... RayTracer/raytracer.o"
+	@echo "... RayTracer/raytracer.i"
+	@echo "... RayTracer/raytracer.s"
+	@echo "... RayTracer/tinyxml2.o"
+	@echo "... RayTracer/tinyxml2.i"
+	@echo "... RayTracer/tinyxml2.s"
+	@echo "... RayTracer/vectorOperations.o"
+	@echo "... RayTracer/vectorOperations.i"
+	@echo "... RayTracer/vectorOperations.s"
 .PHONY : help
 
 

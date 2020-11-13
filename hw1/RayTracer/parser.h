@@ -7,18 +7,28 @@
 
 namespace parser
 {
-    //Notice that all the structures are as simple as possible
-    //so that you are not enforced to adopt any style or design.
     struct Vec3f
     {
         float x, y, z;
         friend std::ostream &operator<<(std::ostream &os, const Vec3f &f);
 
-        Vec3f operator + (const Vec3f& v) const;
-        Vec3f operator - (const Vec3f& v) const;
-        Vec3f operator * (double d) const;
-        Vec3f operator / (double d) const;
+        Vec3f operator + (const Vec3f& v) ;
+        Vec3f operator - (const Vec3f& v) ;
+        Vec3f operator * (double d) ;
+        Vec3f operator / (double d) ;
+        Vec3f cross (const Vec3f& v) ;
+        float dot (const Vec3f& v) ;
+        bool operator ==(Vec3f v);
+        bool operator !=(Vec3f v);
+        double length();
+        Vec3f normalization();
 
+    };
+
+    struct Ray
+    {
+        Vec3f o, d;
+        Ray(const Vec3f &ori, const Vec3f &dir) : o(ori), d(dir) {}
     };
 
     struct Vec3i

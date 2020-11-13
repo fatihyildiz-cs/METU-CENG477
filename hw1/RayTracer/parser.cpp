@@ -5,11 +5,6 @@
 
 using namespace parser;
 
-Vec3f Vec3f::operator+(const Vec3f &v) const { return Vec3f{x + v.x, y + v.y, z + v.z}; }
-Vec3f Vec3f::operator-(const Vec3f &v) const { return Vec3f{x - v.x, y - v.y, z - v.z}; }
-Vec3f Vec3f::operator*(double d) const { return Vec3f{float(x * d), float(y * d), float(z * d)}; }
-Vec3f Vec3f::operator/(double d) const { return Vec3f{ float(x / d), float(y / d), float(z / d)}; }
-
 void parser::Scene::loadFromXml(const std::string& filepath)
 {
     tinyxml2::XMLDocument file;
