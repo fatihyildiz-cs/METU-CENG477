@@ -72,6 +72,7 @@ namespace parser
         int v0_id;
         int v1_id;
         int v2_id;
+        Vec3f normalVec;
     };
 
     struct Mesh
@@ -84,6 +85,7 @@ namespace parser
     {
         int material_id;
         Face indices;
+        Vec3f normalVec;
     };
 
     struct Sphere
