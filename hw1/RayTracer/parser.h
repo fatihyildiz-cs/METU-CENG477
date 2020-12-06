@@ -12,9 +12,9 @@ namespace parser
         float x, y, z;
         friend std::ostream &operator<<(std::ostream &os, const Vec3f &f);
 
-        Vec3f operator + (const Vec3f& v) ;
+        Vec3f operator + (const Vec3f& v) const;
         Vec3f operator - (const Vec3f& v) ;
-        Vec3f operator * (double d) ;
+        Vec3f operator * (double d) const;
         Vec3f operator / (double d) ;
         Vec3f cross (const Vec3f& v) ;
         float dot (const Vec3f& v) ;
@@ -29,6 +29,9 @@ namespace parser
     {
         Vec3f o, d;
         Ray(const Vec3f &ori, const Vec3f &dir) : o(ori), d(dir) {}
+        float boyu;
+
+        Ray() {}
     };
 
     struct Vec3i
@@ -72,13 +75,14 @@ namespace parser
         int v0_id;
         int v1_id;
         int v2_id;
-        Vec3f normalVec;
+        Vec3f normal;
     };
 
     struct Mesh
     {
         int material_id;
         std::vector<Face> faces;
+
     };
 
     struct Triangle

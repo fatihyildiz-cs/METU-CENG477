@@ -6,9 +6,9 @@ using namespace std;
 using namespace parser;
 
 
-Vec3f Vec3f::operator+(const Vec3f &v) { return Vec3f{x + v.x, y + v.y, z + v.z}; }
+Vec3f Vec3f::operator+(const Vec3f &v) const { return Vec3f{x + v.x, y + v.y, z + v.z}; }
 Vec3f Vec3f::operator-(const Vec3f &v) { return Vec3f{x - v.x, y - v.y, z - v.z}; }
-Vec3f Vec3f::operator*(double d) { return Vec3f{float(x * d), float(y * d), float(z * d)}; }
+Vec3f Vec3f::operator*(double d) const { return Vec3f{float(x * d), float(y * d), float(z * d)}; }
 Vec3f Vec3f::operator/(double d) { return Vec3f{ float(x / d), float(y / d), float(z / d)}; }
 Vec3f Vec3f::cross(const Vec3f &v) { return Vec3f{y * v.z - v.y * z, v.x * z - x * v.z, x * v.y - v.x * y}; }
 float Vec3f::dot(const Vec3f &v) { return x * v.x + y * v.y + z * v.z; }

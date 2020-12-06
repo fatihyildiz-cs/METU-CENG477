@@ -216,5 +216,3 @@ void parser::Scene::loadFromXml(const std::string& filepath)
         element = element->NextSiblingElement("Sphere");
     }
 }
-
-
