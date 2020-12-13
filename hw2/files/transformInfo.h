@@ -11,10 +11,10 @@
 class TransformInfo {
 
 public:
-    char type;
+    std::string type;
     int index;
 
-    TransformInfo(char type, int index);
+    TransformInfo(std::string type, int index);
 
     friend std::ostream &operator<<(std::ostream &os, const TransformInfo &info);
 };

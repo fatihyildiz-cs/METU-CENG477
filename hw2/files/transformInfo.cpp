@@ -4,7 +4,7 @@
 
 #include "transformInfo.h"
 
-TransformInfo::TransformInfo(char type, int index) : type(type), index(index) {}
+TransformInfo::TransformInfo(std::string type, int index) : type(type), index(index) {}
 
 std::ostream &operator<<(std::ostream &os, const TransformInfo &info) {
     os << "type: " << info.type << " index: " << info.index;

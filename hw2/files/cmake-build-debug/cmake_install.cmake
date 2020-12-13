@@ -1,4 +1,4 @@
-# Install script for directory: /Users/fatihyildiz/Desktop/hw2/files
+# Install script for directory: /Users/fatihyildiz/Desktop/CENG477/hw2/files
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/fatihyildiz/Desktop/hw2/files/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

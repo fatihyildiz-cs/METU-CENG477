@@ -61,26 +61,26 @@ namespace fst
 
     void Integrator::doTransformations() {
 
-
-//        for (auto& sphere : m_scene.spheres)
-//        {
-//        }
-//
-//        for (auto& mesh : m_scene.meshes)
-//        {
-//        }
-
-
-// below lines print the individual TransformInfos for spheres and meshes. Note that triangle is treated as a mesh.
-// We push the triangles into meshes array when loading from parser. Nothing special is necessary for triangles.
-
         int i=1;
+
         for (auto& sphere : m_scene.spheres)
         {
-            cout << "Sphere number " << i++ << endl;
+            cout << "Sphere " << i++ << endl;
+            for(TransformInfo info : sphere.transformInfos){
 
-            for(TransformInfo t : sphere.transformInfos){
-                cout << t << endl;
+                 if(info.type == "t"){
+                    Translation translation = m_scene.translations[info.index-1];
+                    cout << "Translation info: " << translation << endl;
+                 }
+                 else if(info.type == "s"){
+                     Scaling scaling = m_scene.scalings[info.index-1];
+                     cout << "Scaling info: " << scaling << endl;
+                 }
+                 else if(info.type == "r"){
+                     Rotation rotation = m_scene.rotations[info.index-1];
+                     cout << "Rotation info: " << rotation << endl;
+                 }
+                 else{}
             }
             cout << endl;
         }
@@ -88,13 +88,51 @@ namespace fst
         i = 1;
         for (auto& mesh : m_scene.meshes)
         {
-            cout << "Mesh number " << i++ << endl;
+            cout << "Mesh " << i++ << endl;
+            for(TransformInfo info : mesh.transformInfos){
 
-            for(TransformInfo t : mesh.transformInfos){
-                cout << t << endl;
+                if(info.type == "t"){
+                    Translation translation = m_scene.translations[info.index-1];
+                    cout << "Translation info: " << translation << endl;
+                }
+                else if(info.type == "s"){
+                    Scaling scaling = m_scene.scalings[info.index-1];
+                    cout << "Scaling info: " << scaling << endl;
+                }
+                else if(info.type == "r"){
+                    Rotation rotation = m_scene.rotations[info.index-1];
+                    cout << "Rotation info: " << rotation << endl;
+                }
+                else{}
             }
             cout << endl;
         }
+
+
+// below lines print the individual TransformInfos for spheres and meshes. Note that triangle is treated as a mesh.
+// We push the triangles into meshes array when loading from parser. Nothing special is necessary for triangles.
+
+//        int i=1;
+//        for (auto& sphere : m_scene.spheres)
+//        {
+//            cout << "Sphere number " << i++ << endl;
+//
+//            for(TransformInfo t : sphere.transformInfos){
+//                cout << t << endl;
+//            }
+//            cout << endl;
+//        }
+//
+//        i = 1;
+//        for (auto& mesh : m_scene.meshes)
+//        {
+//            cout << "Mesh number " << i++ << endl;
+//
+//            for(TransformInfo t : mesh.transformInfos){
+//                cout << t << endl;
+//            }
+//            cout << endl;
+//        }
 
 // below lines print the transformations that the scene has, not the individual objects. We reach these transformations
 // by the indexes of object's TransformInfos array.

@@ -17,7 +17,7 @@ namespace fst
         vector<TransformInfo> transformInfos;
         for(string s : transformInfoStrings){
 
-            transformInfos.push_back(TransformInfo(s[0], stoi(s.substr(1))));
+            transformInfos.push_back(TransformInfo(s.substr(0,1), stoi(s.substr(1))));
         }
         return transformInfos;
     }
