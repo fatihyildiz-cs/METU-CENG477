@@ -27,8 +27,8 @@ namespace fst
 
         int textureId;
 
-    private:
         int m_material_id;
+    private:
     };
 
 

@@ -62,70 +62,80 @@ namespace fst
         }
     }
 
+
     void Integrator::doTransformations() {
 
         int i=1;
+
         for (auto& sphere : m_scene.spheres)
         {
-            Matrix myMatrix;
-            for(const TransformInfo& info : sphere.transformInfos){
 
+            Matrix myMatrix;
+            for(TransformInfo info : sphere.transformInfos){
                 if(info.type == "t"){
                     Translation translation = m_scene.translations[info.index-1];
                     myMatrix.Translate(translation.x, translation.y, translation.z);
+
                 }
                 else if(info.type == "s"){
                     Scaling scaling = m_scene.scalings[info.index-1];
                     myMatrix.Scale(scaling.x, scaling.y, scaling.z);
-                    sphere.m_radius *= scaling.x;
+                    sphere.m_radius*=scaling.x;
+
                 }
                 else if(info.type == "r"){
                     Rotation rotation = m_scene.rotations[info.index-1];
-                    myMatrix.Rotate();
+                    myMatrix.Rotate(rotation.x,rotation.y,rotation.z,rotation.angle);
                 }
                 else{}
 
             }
+
             myMatrix.doAllTransformations(sphere.m_center);
         }
 
         i = 1;
         for (auto& mesh : m_scene.meshes)
         {
-//            cout << "Mesh " << i++ << endl;
+
             Matrix myMatrix;
-            for(const TransformInfo& info : mesh.transformInfos){
+            for(TransformInfo info : mesh.transformInfos){
 
                 if(info.type == "t"){
                     Translation translation = m_scene.translations[info.index-1];
                     myMatrix.Translate(translation.x, translation.y, translation.z);
-//                    cout << endl;
-//                    myMatrix.printMtrx();
-//                    cout << endl;
                 }
                 else if(info.type == "s"){
                     Scaling scaling = m_scene.scalings[info.index-1];
                     myMatrix.Scale(scaling.x, scaling.y, scaling.z);
-//                    cout << endl;
-//                    myMatrix.printMtrx();
-//                    cout << endl;
                 }
                 else if(info.type == "r"){
                     Rotation rotation = m_scene.rotations[info.index-1];
-                    myMatrix.Rotate();
-//                    cout << endl;
-//                    myMatrix.printMtrx();
-//                    cout << endl;
+                    myMatrix.Rotate(rotation.x,rotation.y,rotation.z,rotation.angle);
                 }
                 else{}
             }
-            for(auto& triangle: mesh.m_triangles){
-                myMatrix.doAllTransformations(triangle.m_edge1);
-                myMatrix.doAllTransformations(triangle.m_edge2);
-                myMatrix.doAllTransformations(triangle.m_v0);
+            for(int i=0;i<mesh.m_triangles.size();i++) {
+                mesh.m_triangles[i].m_edge1.x+=mesh.m_triangles[i].m_v0.x;
+                mesh.m_triangles[i].m_edge1.y+=mesh.m_triangles[i].m_v0.y;
+                mesh.m_triangles[i].m_edge1.z+=mesh.m_triangles[i].m_v0.z;
+
+                mesh.m_triangles[i].m_edge2.x+=mesh.m_triangles[i].m_v0.x;
+                mesh.m_triangles[i].m_edge2.y+=mesh.m_triangles[i].m_v0.y;
+                mesh.m_triangles[i].m_edge2.z+=mesh.m_triangles[i].m_v0.z;
+                myMatrix.doAllTransformations(mesh.m_triangles[i].m_v0);
+                myMatrix.doAllTransformations(mesh.m_triangles[i].m_edge1);
+                myMatrix.doAllTransformations(mesh.m_triangles[i].m_edge2);
+                mesh.m_triangles[i].m_edge1.x-=mesh.m_triangles[i].m_v0.x;
+                mesh.m_triangles[i].m_edge1.y-=mesh.m_triangles[i].m_v0.y;
+                mesh.m_triangles[i].m_edge1.z-=mesh.m_triangles[i].m_v0.z;
+
+                mesh.m_triangles[i].m_edge2.x-=mesh.m_triangles[i].m_v0.x;
+                mesh.m_triangles[i].m_edge2.y-=mesh.m_triangles[i].m_v0.y;
+                mesh.m_triangles[i].m_edge2.z-=mesh.m_triangles[i].m_v0.z;
+                mesh.m_triangles[i].m_normal=math::normalize(math::cross(mesh.m_triangles[i].m_edge1,mesh.m_triangles[i].m_edge2));
             }
         }
-
     }
 
     void Integrator:: doTextureMapping(){
@@ -135,12 +145,12 @@ namespace fst
         {
             cout << "Sphere number " << i++ << endl;
             if(sphere.textureId != -1){
-//                Texture texture = m_scene.textures[sphere.textureId-1];
 
-//                cout <<  texture.m_imageName << endl;
-//                cout << texture.m_height << " x " << texture.m_width << endl;
-//                cout << endl;
-                cout << m_scene.textures[sphere.textureId-1].m_imageName << endl;
+                Texture texture = m_scene.textures[sphere.textureId-1];
+
+
+                cout <<  texture.m_imageName << endl;
+
             }
         }
 
@@ -149,22 +159,18 @@ namespace fst
         {
             cout << "Mesh number " << i++ << endl;
             if(mesh.textureId != -1){
-//                Texture texture = m_scene.textures[mesh.textureId-1];
-//
-//                cout <<  texture.m_imageName << endl;
-//                cout << texture.m_height << " x " << texture.m_width << endl;
-//                cout << endl;
-                cout << m_scene.textures[mesh.textureId-1].m_imageName << endl;
+
+                Texture texture = m_scene.textures[mesh.textureId-1];
+
+                cout <<  texture.m_imageName << endl;
             }
         }
     };
 
     void Integrator::integrate()
     {
-        doTransformations();
-
-
         doTextureMapping();
+        doTransformations();
 
         for (auto& camera : m_scene.cameras)
         {

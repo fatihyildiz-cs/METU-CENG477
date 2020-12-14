@@ -127,7 +127,10 @@ void parser::Scene::loadFromXml(const std::string& filepath)
             stream << child->GetText() << std::endl;
             stream >> material.mirror.x >> material.mirror.y >> material.mirror.z;
         }
-        
+        else {
+
+            material.mirror.x=0, material.mirror.y=0, material.mirror.z=0;
+        }
         child = element->FirstChildElement("AmbientReflectance");
         stream << child->GetText() << std::endl;
         child = element->FirstChildElement("DiffuseReflectance");
@@ -327,6 +330,7 @@ void parser::Scene::loadFromXml(const std::string& filepath)
         stream >> sphere.material_id;
 
         child = element->FirstChildElement("Texture");
+        sphere.texture_id = -1;
 
         if (child) {
             stream << child->GetText() << std::endl;

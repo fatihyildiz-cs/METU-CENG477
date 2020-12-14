@@ -11,22 +11,25 @@ using namespace fst::math;
 class Matrix {
 
 public:
-
-
+    Matrix();
+    ~Matrix();
+    float **baseMatrix;
+    float **baseMatrixduz;
     float  identity[4][4]={{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
 
     void Translate(float tx,float ty,float tz);
 
-    void Rotate ();
+    void Rotate (float x,float y,float z,float alpha);
 
     void Scale(float sx,float sy,float sz);
 
 
     void rightMultiplyMatrix( float m1[][4]) ;
+    void rightMultiplyMatrix( float **m1) ;
 
-    void printMtrx();
+    void printMatrix();
     void doAllTransformations(Vector3f &point) ;
-
+    void findBase(float x,float y,float z);
 
 
 };
