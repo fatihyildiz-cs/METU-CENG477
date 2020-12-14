@@ -143,6 +143,33 @@ files/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/build
 .PHONY : files/fast
 
+Matrix.o: Matrix.cpp.o
+
+.PHONY : Matrix.o
+
+# target to build an object file
+Matrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/Matrix.cpp.o
+.PHONY : Matrix.cpp.o
+
+Matrix.i: Matrix.cpp.i
+
+.PHONY : Matrix.i
+
+# target to preprocess a source file
+Matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/Matrix.cpp.i
+.PHONY : Matrix.cpp.i
+
+Matrix.s: Matrix.cpp.s
+
+.PHONY : Matrix.s
+
+# target to generate assembly for a file
+Matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/Matrix.cpp.s
+.PHONY : Matrix.cpp.s
+
 camera.o: camera.cpp.o
 
 .PHONY : camera.o
@@ -827,6 +854,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... files"
+	@echo "... Matrix.o"
+	@echo "... Matrix.i"
+	@echo "... Matrix.s"
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"

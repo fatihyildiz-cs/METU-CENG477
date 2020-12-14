@@ -23,8 +23,8 @@ namespace fst
 
         std::vector<TransformInfo> transformInfos;
 
-    private:
         float m_radius;
+    private:
         int m_material_id;
     };
 

@@ -1,7 +1,7 @@
 #include <sstream>
 #include <iostream>
 #include "scene.h"
-
+#include <iterator>
 using namespace std;
 
 namespace fst
@@ -91,7 +91,6 @@ namespace fst
                     vertex_data[face.v1_id - 1] - vertex_data[face.v0_id - 1],
                     vertex_data[face.v2_id - 1] - vertex_data[face.v0_id - 1]));
             }
-
             vector<TransformInfo> transformInfos = getTransformInfos(mesh.transformations);
 
             meshes.push_back(Mesh(std::move(triangles), mesh.material_id, transformInfos));

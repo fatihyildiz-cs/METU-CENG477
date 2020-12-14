@@ -2,9 +2,11 @@
 #include "integrator.h"
 #include "image.h"
 #include "ctpl_stl.h"
+#include "matrix.h"
+#include "vector3f.h"
 
 using namespace std;
-
+using namespace fst::math;
 namespace fst
 {
     Integrator::Integrator(const parser::Scene& parser)
@@ -62,95 +64,58 @@ namespace fst
     void Integrator::doTransformations() {
 
         int i=1;
-
         for (auto& sphere : m_scene.spheres)
         {
-            cout << "Sphere " << i++ << endl;
-            for(TransformInfo info : sphere.transformInfos){
+            Matrix myMatrix;
+            for(const TransformInfo& info : sphere.transformInfos){
 
-                 if(info.type == "t"){
+                if(info.type == "t"){
                     Translation translation = m_scene.translations[info.index-1];
-                    cout << "Translation info: " << translation << endl;
-                 }
-                 else if(info.type == "s"){
-                     Scaling scaling = m_scene.scalings[info.index-1];
-                     cout << "Scaling info: " << scaling << endl;
-                 }
-                 else if(info.type == "r"){
-                     Rotation rotation = m_scene.rotations[info.index-1];
-                     cout << "Rotation info: " << rotation << endl;
-                 }
-                 else{}
+                    myMatrix.Translate(translation.x, translation.y, translation.z);
+                }
+                else if(info.type == "s"){
+                    Scaling scaling = m_scene.scalings[info.index-1];
+                    myMatrix.Scale(scaling.x, scaling.y, scaling.z);
+                    sphere.m_radius *= scaling.x;
+                }
+                else if(info.type == "r"){
+                    Rotation rotation = m_scene.rotations[info.index-1];
+                    myMatrix.Rotate();
+                }
+                else{}
+
             }
-            cout << endl;
+            myMatrix.doAllTransformations(sphere.m_center);
         }
 
         i = 1;
         for (auto& mesh : m_scene.meshes)
         {
-            cout << "Mesh " << i++ << endl;
-            for(TransformInfo info : mesh.transformInfos){
+
+            Matrix myMatrix;
+            for(const TransformInfo& info : mesh.transformInfos){
 
                 if(info.type == "t"){
                     Translation translation = m_scene.translations[info.index-1];
-                    cout << "Translation info: " << translation << endl;
+                    myMatrix.Translate(translation.x, translation.y, translation.z);
                 }
                 else if(info.type == "s"){
                     Scaling scaling = m_scene.scalings[info.index-1];
-                    cout << "Scaling info: " << scaling << endl;
+                    myMatrix.Scale(scaling.x, scaling.y, scaling.z);
                 }
                 else if(info.type == "r"){
                     Rotation rotation = m_scene.rotations[info.index-1];
-                    cout << "Rotation info: " << rotation << endl;
+                    myMatrix.Rotate();
                 }
                 else{}
             }
-            cout << endl;
+            for(auto& triangle: mesh.m_triangles){
+                myMatrix.doAllTransformations(triangle.m_edge1);
+                myMatrix.doAllTransformations(triangle.m_edge2);
+                myMatrix.doAllTransformations(triangle.m_v0);
+            }
         }
 
-
-// below lines print the individual TransformInfos for spheres and meshes. Note that triangle is treated as a mesh.
-// We push the triangles into meshes array when loading from parser. Nothing special is necessary for triangles.
-
-//        int i=1;
-//        for (auto& sphere : m_scene.spheres)
-//        {
-//            cout << "Sphere number " << i++ << endl;
-//
-//            for(TransformInfo t : sphere.transformInfos){
-//                cout << t << endl;
-//            }
-//            cout << endl;
-//        }
-//
-//        i = 1;
-//        for (auto& mesh : m_scene.meshes)
-//        {
-//            cout << "Mesh number " << i++ << endl;
-//
-//            for(TransformInfo t : mesh.transformInfos){
-//                cout << t << endl;
-//            }
-//            cout << endl;
-//        }
-
-// below lines print the transformations that the scene has, not the individual objects. We reach these transformations
-// by the indexes of object's TransformInfos array.
-
-//        cout << "rotations: " << endl;
-//        for( auto rotation : m_scene.rotations){
-//            cout << rotation << endl;
-//        }
-//
-//        cout << "scalings: " << endl;
-//        for( auto scaling : m_scene.scalings){
-//            cout << scaling << endl;
-//        }
-//
-//        cout << "translations: " << endl;
-//        for( auto translation : m_scene.translations){
-//            cout << translation << endl;
-//        }
     }
 
     void Integrator::integrate()

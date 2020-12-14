@@ -85,6 +85,12 @@
 		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/Makefile">
 			<Option target="files"/>
 		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/Matrix.cpp">
+			<Option target="files"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/Matrix.h">
+			<Option target="files"/>
+		</Unit>
 		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/camera.cpp">
 			<Option target="files"/>
 		</Unit>
