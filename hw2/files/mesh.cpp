@@ -15,10 +15,11 @@ namespace fst
         , m_material_id(material_id)
     {}
 
-    Mesh::Mesh(std::vector<Triangle>&& triangles, int material_id, std::vector<TransformInfo> transformInfos)
+    Mesh::Mesh(std::vector<Triangle>&& triangles, int material_id, std::vector<TransformInfo> transformInfos, int textureId)
             : m_triangles(std::move(triangles))
             , m_material_id(material_id)
             , transformInfos(transformInfos)
+            , textureId(textureId)
     {}
 
     bool Mesh::intersect(const Ray& ray, HitRecord& hit_record, float max_distance) const
@@ -31,7 +32,7 @@ namespace fst
             {
                 min_distance = temp.distance;
                 hit_record = temp;
-		hit_record.material_id = m_material_id;
+		        hit_record.material_id = m_material_id;
             }
         }
 

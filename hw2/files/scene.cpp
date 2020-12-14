@@ -1,6 +1,7 @@
 #include <sstream>
 #include <iostream>
 #include "scene.h"
+#include "jpeg.h"
 #include <iterator>
 using namespace std;
 
@@ -59,6 +60,21 @@ namespace fst
                 Translation(translation.x, translation.y, translation.z));
         }
 
+        for (auto &texture : parser.textures)
+        {
+            char* imageName = new char[texture.imageName.length()+1];
+            int width;
+            int height;
+
+            for (int i = 0; i <= texture.imageName.length(); i++) {
+                imageName[i] = texture.imageName[i];
+            }
+            read_jpeg_header(imageName, width, height);
+            unsigned char* image = new unsigned char[width * height * 3];
+            read_jpeg(imageName, image, width, height);
+            textures.push_back(Texture(width, height,image, imageName, texture.interpolation, texture.decalMode, texture.appearance));
+        }
+
         for (auto &scaling : parser.scalings)
         {
             scalings.push_back(
@@ -93,7 +109,8 @@ namespace fst
             }
             vector<TransformInfo> transformInfos = getTransformInfos(mesh.transformations);
 
-            meshes.push_back(Mesh(std::move(triangles), mesh.material_id, transformInfos));
+            int textureId = (mesh.texture_id > 0) && (mesh.texture_id <= parser.textures.size()) ? mesh.texture_id : -1;
+            meshes.push_back(Mesh(std::move(triangles), mesh.material_id, transformInfos, textureId));
         }
 
         for (auto& triangle : parser.triangles)
@@ -107,14 +124,16 @@ namespace fst
 
             vector<TransformInfo> transformInfos = getTransformInfos(triangle.transformations);
 
-            meshes.push_back(Mesh(std::move(triangles), triangle.material_id, transformInfos));
+            int textureId = (triangle.texture_id > 0) && (triangle.texture_id <= parser.textures.size()) ? triangle.texture_id : -1;
+            meshes.push_back(Mesh(std::move(triangles), triangle.material_id, transformInfos, textureId));
         }
 
         for (auto& sphere : parser.spheres)
         {
             vector<TransformInfo> transformInfos = getTransformInfos(sphere.transformations);
+            int textureId = (sphere.texture_id > 0) && (sphere.texture_id <= parser.textures.size()) ? sphere.texture_id : -1;
             spheres.push_back(Sphere(vertex_data[sphere.center_vertex_id - 1],
-                sphere.radius, sphere.material_id, transformInfos));
+                sphere.radius, sphere.material_id, transformInfos, textureId));
         }
 
         background_color = math::Vector3f(parser.background_color.x, parser.background_color.y, parser.background_color.z);

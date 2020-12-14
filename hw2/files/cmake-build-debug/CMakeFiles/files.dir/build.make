@@ -474,6 +474,7 @@ files: CMakeFiles/files.dir/triangle.cpp.o
 files: CMakeFiles/files.dir/transformInfo.cpp.o
 files: CMakeFiles/files.dir/Matrix.cpp.o
 files: CMakeFiles/files.dir/build.make
+files: /usr/local/lib/libjpeg.dylib
 files: CMakeFiles/files.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable files"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/files.dir/link.txt --verbose=$(VERBOSE)

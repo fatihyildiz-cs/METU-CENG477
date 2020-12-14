@@ -14,6 +14,8 @@ namespace fst
 
         void doTransformations();
 
+        void doTextureMapping();
+
     private:
         Scene m_scene;
 

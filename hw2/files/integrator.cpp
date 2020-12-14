@@ -4,6 +4,7 @@
 #include "ctpl_stl.h"
 #include "matrix.h"
 #include "vector3f.h"
+#include "jpeg.h"
 
 using namespace std;
 using namespace fst::math;
@@ -91,21 +92,30 @@ namespace fst
         i = 1;
         for (auto& mesh : m_scene.meshes)
         {
-
+//            cout << "Mesh " << i++ << endl;
             Matrix myMatrix;
             for(const TransformInfo& info : mesh.transformInfos){
 
                 if(info.type == "t"){
                     Translation translation = m_scene.translations[info.index-1];
                     myMatrix.Translate(translation.x, translation.y, translation.z);
+//                    cout << endl;
+//                    myMatrix.printMtrx();
+//                    cout << endl;
                 }
                 else if(info.type == "s"){
                     Scaling scaling = m_scene.scalings[info.index-1];
                     myMatrix.Scale(scaling.x, scaling.y, scaling.z);
+//                    cout << endl;
+//                    myMatrix.printMtrx();
+//                    cout << endl;
                 }
                 else if(info.type == "r"){
                     Rotation rotation = m_scene.rotations[info.index-1];
                     myMatrix.Rotate();
+//                    cout << endl;
+//                    myMatrix.printMtrx();
+//                    cout << endl;
                 }
                 else{}
             }
@@ -118,9 +128,43 @@ namespace fst
 
     }
 
+    void Integrator:: doTextureMapping(){
+
+        int i=1;
+        for (auto& sphere : m_scene.spheres)
+        {
+            cout << "Sphere number " << i++ << endl;
+            if(sphere.textureId != -1){
+//                Texture texture = m_scene.textures[sphere.textureId-1];
+
+//                cout <<  texture.m_imageName << endl;
+//                cout << texture.m_height << " x " << texture.m_width << endl;
+//                cout << endl;
+                cout << m_scene.textures[sphere.textureId-1].m_imageName << endl;
+            }
+        }
+
+        i = 1;
+        for (auto& mesh : m_scene.meshes)
+        {
+            cout << "Mesh number " << i++ << endl;
+            if(mesh.textureId != -1){
+//                Texture texture = m_scene.textures[mesh.textureId-1];
+//
+//                cout <<  texture.m_imageName << endl;
+//                cout << texture.m_height << " x " << texture.m_width << endl;
+//                cout << endl;
+                cout << m_scene.textures[mesh.textureId-1].m_imageName << endl;
+            }
+        }
+    };
+
     void Integrator::integrate()
     {
         doTransformations();
+
+
+        doTextureMapping();
 
         for (auto& camera : m_scene.cameras)
         {

@@ -16,7 +16,7 @@ void read_jpeg_header(char *filename, int& width, int& height)
 	jpeg_create_decompress(&cinfo);
 
 	/* set input file name */
-	if ((infile = fopen(filename, "rb")) == NULL) 
+	if ((infile = fopen(filename, "rb")) == nullptr)
     {
 		fprintf(stderr, "can't open %s\n", filename);
 		exit(1);

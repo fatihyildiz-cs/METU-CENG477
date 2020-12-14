@@ -5,6 +5,14 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
+#find_package (jpeg REQUIRED)
+#target_link_libraries(files jpeg::jpeg)
+
+#target_link_libraries(files ${JPEG_LIBRARIES})
+#target_add_include_directories(files ${JPEG_INCLUDE_DIR})
+
+
+
 add_executable(files
         hw2_sample_scenes/earth_and_moon.xml
         hw2_sample_scenes/horse.xml
@@ -65,3 +73,11 @@ add_executable(files
         vector2f.h
         vector3f.h
         vector4f.h transformInfo.cpp transformInfo.h Matrix.cpp Matrix.h matrix.cpp matrix.h)
+
+find_package(JPEG REQUIRED)
+
+target_link_libraries(files ${JPEG_LIBRARIES})
+target_include_directories(files PRIVATE ${JPEG_INCLUDE_DIR})
+
+#target_link_libraries(files /usr/local/Cellar/jpeg/9d ...)
+#target_include_directories(files PRIVATE /usr/local/Cellar/jpeg/9d)

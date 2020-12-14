@@ -15,7 +15,6 @@ namespace fst
                 std::string decalMode,
                 std::string appearance);
 
-    private:
         int m_width;
         int m_height;
         unsigned char *m_image;
@@ -23,5 +22,6 @@ namespace fst
         std::string m_interpolation;
         std::string m_decalMode;
         std::string m_appearance;
+    private:
     };
 }
