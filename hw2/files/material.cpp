@@ -18,12 +18,20 @@ namespace fst
         , m_phong_exponent(phong_exponent)
     {}
 
-    math::Vector3f Material::computeBrdf(const math::Vector3f& wi, const math::Vector3f& wo, const math::Vector3f& normal,math::Vector3f tempdif) const
+    math::Vector3f Material::computeBrdf(const math::Vector3f& wi, const math::Vector3f& wo, const math::Vector3f& normal,math::Vector3f &tempdif,bool isReplaceAll) const
+    {
+        auto diffuse = math::max(math::dot(normal, wi), 0.0f);
+        auto specular = std::pow(math::max(math::dot(math::normalize(wo + wi), normal), 0.0f), m_phong_exponent);
+        if(isReplaceAll)
+            return m_specular * specular;
+        return m_specular * specular + tempdif* diffuse;
+    }
+    math::Vector3f Material::computeBrdf(const math::Vector3f& wi, const math::Vector3f& wo, const math::Vector3f& normal) const
     {
         auto diffuse = math::max(math::dot(normal, wi), 0.0f);
         auto specular = std::pow(math::max(math::dot(math::normalize(wo + wi), normal), 0.0f), m_phong_exponent);
 
-        return m_specular * specular + tempdif/255* diffuse;
+        return m_specular * specular + m_diffuse * diffuse;
     }
 
 }

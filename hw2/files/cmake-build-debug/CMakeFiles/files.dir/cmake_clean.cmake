@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/files.dir/MappingData.cpp.o"
   "CMakeFiles/files.dir/Matrix.cpp.o"
   "CMakeFiles/files.dir/camera.cpp.o"
   "CMakeFiles/files.dir/image.cpp.o"

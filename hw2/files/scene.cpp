@@ -149,12 +149,13 @@ namespace fst
         for (auto& sphere : spheres)
         {
             if (sphere.intersect(ray, temp, min_distance))
-            {   temp.texture_id=sphere.textureId;
-            cout<<"sphere text id : " <<sphere.textureId<<endl;
+            {
+                min_distance = temp.distance;
+                temp.texture_id=sphere.textureId;
                 temp.center=sphere.m_center;
                 temp.radius=sphere.m_radius;
-                min_distance = temp.distance;
                 temp.isSphere=1;
+                temp.texture_id = sphere.textureId;
                 hit_record = temp;
 
             }
@@ -163,9 +164,11 @@ namespace fst
         for (auto& mesh : meshes)
         {
             if (mesh.intersect(ray, temp, min_distance))
-            {   temp.texture_id=mesh.textureId;
+            {
                 min_distance = temp.distance;
+                temp.texture_id=mesh.textureId;
                 temp.isSphere=0;
+                temp.texture_id = mesh.textureId;
                 hit_record = temp;
             }
         }

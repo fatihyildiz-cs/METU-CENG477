@@ -10,8 +10,8 @@ namespace fst
     public:
         Material(const math::Vector3f& ambient, const math::Vector3f& diffuse, const math::Vector3f& specular, const math::Vector3f& mirror, float phong_exponent);
 
-        math::Vector3f computeBrdf(const math::Vector3f& wi, const math::Vector3f& wo, const math::Vector3f& normal,math::Vector3f diffusex) const;
-
+        math::Vector3f computeBrdf(const math::Vector3f& wi, const math::Vector3f& wo, const math::Vector3f& normal,math::Vector3f &tempdif,bool isReplaceAll) const;
+        math::Vector3f computeBrdf(const math::Vector3f& wi, const math::Vector3f& wo, const math::Vector3f& normal) const;
         const math::Vector3f& get_ambient() const { return m_ambient; }
         const math::Vector3f& get_mirror() const { return m_mirror; }
         math::Vector3f m_diffuse;

@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/fatihyildiz/Desktop/olduu
+CMAKE_SOURCE_DIR = /Users/fatihyildiz/Desktop/CENG477/hw2/files
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/fatihyildiz/Desktop/olduu/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles /Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,6 +142,33 @@ files: cmake_check_build_system
 files/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/build
 .PHONY : files/fast
+
+MappingData.o: MappingData.cpp.o
+
+.PHONY : MappingData.o
+
+# target to build an object file
+MappingData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/MappingData.cpp.o
+.PHONY : MappingData.cpp.o
+
+MappingData.i: MappingData.cpp.i
+
+.PHONY : MappingData.i
+
+# target to preprocess a source file
+MappingData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/MappingData.cpp.i
+.PHONY : MappingData.cpp.i
+
+MappingData.s: MappingData.cpp.s
+
+.PHONY : MappingData.s
+
+# target to generate assembly for a file
+MappingData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/MappingData.cpp.s
+.PHONY : MappingData.cpp.s
 
 Matrix.o: Matrix.cpp.o
 
@@ -854,6 +881,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... files"
+	@echo "... MappingData.o"
+	@echo "... MappingData.i"
+	@echo "... MappingData.s"
 	@echo "... Matrix.o"
 	@echo "... Matrix.i"
 	@echo "... Matrix.s"

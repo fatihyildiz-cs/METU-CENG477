@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/fatihyildiz/Desktop/olduu
+CMAKE_SOURCE_DIR = /Users/fatihyildiz/Desktop/CENG477/hw2/files
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/fatihyildiz/Desktop/olduu/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/files.dir/depend.make
@@ -79,341 +79,354 @@ include CMakeFiles/files.dir/flags.make
 
 CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.o: ../sample_main_files/main_for_jpeg_to_ppm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.o -c /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_jpeg_to_ppm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_jpeg_to_ppm.cpp
 
 CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_jpeg_to_ppm.cpp > CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_jpeg_to_ppm.cpp > CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.i
 
 CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_jpeg_to_ppm.cpp -o CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_jpeg_to_ppm.cpp -o CMakeFiles/files.dir/sample_main_files/main_for_jpeg_to_ppm.cpp.s
 
 CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.o: ../sample_main_files/main_for_matrix_inversion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.o -c /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_matrix_inversion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_matrix_inversion.cpp
 
 CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_matrix_inversion.cpp > CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_matrix_inversion.cpp > CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.i
 
 CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_matrix_inversion.cpp -o CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_matrix_inversion.cpp -o CMakeFiles/files.dir/sample_main_files/main_for_matrix_inversion.cpp.s
 
 CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.o: ../sample_main_files/main_for_write_jpeg_file.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.o -c /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_write_jpeg_file.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_write_jpeg_file.cpp
 
 CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_write_jpeg_file.cpp > CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_write_jpeg_file.cpp > CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.i
 
 CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_write_jpeg_file.cpp -o CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_write_jpeg_file.cpp -o CMakeFiles/files.dir/sample_main_files/main_for_write_jpeg_file.cpp.s
 
 CMakeFiles/files.dir/camera.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/camera.cpp.o: ../camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/files.dir/camera.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/camera.cpp.o -c /Users/fatihyildiz/Desktop/olduu/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/files.dir/camera.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/camera.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/camera.cpp
 
 CMakeFiles/files.dir/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/camera.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/camera.cpp > CMakeFiles/files.dir/camera.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/camera.cpp > CMakeFiles/files.dir/camera.cpp.i
 
 CMakeFiles/files.dir/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/camera.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/camera.cpp -o CMakeFiles/files.dir/camera.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/camera.cpp -o CMakeFiles/files.dir/camera.cpp.s
 
 CMakeFiles/files.dir/image.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/image.cpp.o: ../image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/files.dir/image.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/image.cpp.o -c /Users/fatihyildiz/Desktop/olduu/image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/files.dir/image.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/image.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/image.cpp
 
 CMakeFiles/files.dir/image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/image.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/image.cpp > CMakeFiles/files.dir/image.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/image.cpp > CMakeFiles/files.dir/image.cpp.i
 
 CMakeFiles/files.dir/image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/image.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/image.cpp -o CMakeFiles/files.dir/image.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/image.cpp -o CMakeFiles/files.dir/image.cpp.s
 
 CMakeFiles/files.dir/integrator.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/integrator.cpp.o: ../integrator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/files.dir/integrator.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/integrator.cpp.o -c /Users/fatihyildiz/Desktop/olduu/integrator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/files.dir/integrator.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/integrator.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/integrator.cpp
 
 CMakeFiles/files.dir/integrator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/integrator.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/integrator.cpp > CMakeFiles/files.dir/integrator.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/integrator.cpp > CMakeFiles/files.dir/integrator.cpp.i
 
 CMakeFiles/files.dir/integrator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/integrator.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/integrator.cpp -o CMakeFiles/files.dir/integrator.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/integrator.cpp -o CMakeFiles/files.dir/integrator.cpp.s
 
 CMakeFiles/files.dir/jpeg.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/jpeg.cpp.o: ../jpeg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/files.dir/jpeg.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/jpeg.cpp.o -c /Users/fatihyildiz/Desktop/olduu/jpeg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/files.dir/jpeg.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/jpeg.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/jpeg.cpp
 
 CMakeFiles/files.dir/jpeg.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/jpeg.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/jpeg.cpp > CMakeFiles/files.dir/jpeg.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/jpeg.cpp > CMakeFiles/files.dir/jpeg.cpp.i
 
 CMakeFiles/files.dir/jpeg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/jpeg.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/jpeg.cpp -o CMakeFiles/files.dir/jpeg.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/jpeg.cpp -o CMakeFiles/files.dir/jpeg.cpp.s
 
 CMakeFiles/files.dir/main.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/files.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/main.cpp.o -c /Users/fatihyildiz/Desktop/olduu/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/files.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/main.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/main.cpp
 
 CMakeFiles/files.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/main.cpp > CMakeFiles/files.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/main.cpp > CMakeFiles/files.dir/main.cpp.i
 
 CMakeFiles/files.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/main.cpp -o CMakeFiles/files.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/main.cpp -o CMakeFiles/files.dir/main.cpp.s
 
 CMakeFiles/files.dir/material.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/material.cpp.o: ../material.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/files.dir/material.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/material.cpp.o -c /Users/fatihyildiz/Desktop/olduu/material.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/files.dir/material.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/material.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/material.cpp
 
 CMakeFiles/files.dir/material.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/material.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/material.cpp > CMakeFiles/files.dir/material.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/material.cpp > CMakeFiles/files.dir/material.cpp.i
 
 CMakeFiles/files.dir/material.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/material.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/material.cpp -o CMakeFiles/files.dir/material.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/material.cpp -o CMakeFiles/files.dir/material.cpp.s
 
 CMakeFiles/files.dir/matrixInverse.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/matrixInverse.cpp.o: ../matrixInverse.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/files.dir/matrixInverse.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/matrixInverse.cpp.o -c /Users/fatihyildiz/Desktop/olduu/matrixInverse.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/files.dir/matrixInverse.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/matrixInverse.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/matrixInverse.cpp
 
 CMakeFiles/files.dir/matrixInverse.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/matrixInverse.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/matrixInverse.cpp > CMakeFiles/files.dir/matrixInverse.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/matrixInverse.cpp > CMakeFiles/files.dir/matrixInverse.cpp.i
 
 CMakeFiles/files.dir/matrixInverse.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/matrixInverse.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/matrixInverse.cpp -o CMakeFiles/files.dir/matrixInverse.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/matrixInverse.cpp -o CMakeFiles/files.dir/matrixInverse.cpp.s
 
 CMakeFiles/files.dir/mesh.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/mesh.cpp.o: ../mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/files.dir/mesh.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/mesh.cpp.o -c /Users/fatihyildiz/Desktop/olduu/mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/files.dir/mesh.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/mesh.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/mesh.cpp
 
 CMakeFiles/files.dir/mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/mesh.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/mesh.cpp > CMakeFiles/files.dir/mesh.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/mesh.cpp > CMakeFiles/files.dir/mesh.cpp.i
 
 CMakeFiles/files.dir/mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/mesh.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/mesh.cpp -o CMakeFiles/files.dir/mesh.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/mesh.cpp -o CMakeFiles/files.dir/mesh.cpp.s
 
 CMakeFiles/files.dir/parser.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/parser.cpp.o: ../parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/files.dir/parser.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/parser.cpp.o -c /Users/fatihyildiz/Desktop/olduu/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/files.dir/parser.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/parser.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/parser.cpp
 
 CMakeFiles/files.dir/parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/parser.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/parser.cpp > CMakeFiles/files.dir/parser.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/parser.cpp > CMakeFiles/files.dir/parser.cpp.i
 
 CMakeFiles/files.dir/parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/parser.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/parser.cpp -o CMakeFiles/files.dir/parser.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/parser.cpp -o CMakeFiles/files.dir/parser.cpp.s
 
 CMakeFiles/files.dir/point_light.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/point_light.cpp.o: ../point_light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/files.dir/point_light.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/point_light.cpp.o -c /Users/fatihyildiz/Desktop/olduu/point_light.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/files.dir/point_light.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/point_light.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/point_light.cpp
 
 CMakeFiles/files.dir/point_light.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/point_light.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/point_light.cpp > CMakeFiles/files.dir/point_light.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/point_light.cpp > CMakeFiles/files.dir/point_light.cpp.i
 
 CMakeFiles/files.dir/point_light.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/point_light.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/point_light.cpp -o CMakeFiles/files.dir/point_light.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/point_light.cpp -o CMakeFiles/files.dir/point_light.cpp.s
 
 CMakeFiles/files.dir/ppm.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/ppm.cpp.o: ../ppm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/files.dir/ppm.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/ppm.cpp.o -c /Users/fatihyildiz/Desktop/olduu/ppm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/files.dir/ppm.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/ppm.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/ppm.cpp
 
 CMakeFiles/files.dir/ppm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/ppm.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/ppm.cpp > CMakeFiles/files.dir/ppm.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/ppm.cpp > CMakeFiles/files.dir/ppm.cpp.i
 
 CMakeFiles/files.dir/ppm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/ppm.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/ppm.cpp -o CMakeFiles/files.dir/ppm.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/ppm.cpp -o CMakeFiles/files.dir/ppm.cpp.s
 
 CMakeFiles/files.dir/ray.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/ray.cpp.o: ../ray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/files.dir/ray.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/ray.cpp.o -c /Users/fatihyildiz/Desktop/olduu/ray.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/files.dir/ray.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/ray.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/ray.cpp
 
 CMakeFiles/files.dir/ray.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/ray.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/ray.cpp > CMakeFiles/files.dir/ray.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/ray.cpp > CMakeFiles/files.dir/ray.cpp.i
 
 CMakeFiles/files.dir/ray.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/ray.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/ray.cpp -o CMakeFiles/files.dir/ray.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/ray.cpp -o CMakeFiles/files.dir/ray.cpp.s
 
 CMakeFiles/files.dir/rotation.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/rotation.cpp.o: ../rotation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/files.dir/rotation.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/rotation.cpp.o -c /Users/fatihyildiz/Desktop/olduu/rotation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/files.dir/rotation.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/rotation.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/rotation.cpp
 
 CMakeFiles/files.dir/rotation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/rotation.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/rotation.cpp > CMakeFiles/files.dir/rotation.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/rotation.cpp > CMakeFiles/files.dir/rotation.cpp.i
 
 CMakeFiles/files.dir/rotation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/rotation.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/rotation.cpp -o CMakeFiles/files.dir/rotation.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/rotation.cpp -o CMakeFiles/files.dir/rotation.cpp.s
 
 CMakeFiles/files.dir/scaling.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/scaling.cpp.o: ../scaling.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/files.dir/scaling.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/scaling.cpp.o -c /Users/fatihyildiz/Desktop/olduu/scaling.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/files.dir/scaling.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/scaling.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/scaling.cpp
 
 CMakeFiles/files.dir/scaling.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/scaling.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/scaling.cpp > CMakeFiles/files.dir/scaling.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/scaling.cpp > CMakeFiles/files.dir/scaling.cpp.i
 
 CMakeFiles/files.dir/scaling.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/scaling.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/scaling.cpp -o CMakeFiles/files.dir/scaling.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/scaling.cpp -o CMakeFiles/files.dir/scaling.cpp.s
 
 CMakeFiles/files.dir/scene.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/scene.cpp.o: ../scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/files.dir/scene.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/scene.cpp.o -c /Users/fatihyildiz/Desktop/olduu/scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/files.dir/scene.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/scene.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/scene.cpp
 
 CMakeFiles/files.dir/scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/scene.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/scene.cpp > CMakeFiles/files.dir/scene.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/scene.cpp > CMakeFiles/files.dir/scene.cpp.i
 
 CMakeFiles/files.dir/scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/scene.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/scene.cpp -o CMakeFiles/files.dir/scene.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/scene.cpp -o CMakeFiles/files.dir/scene.cpp.s
 
 CMakeFiles/files.dir/sphere.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/sphere.cpp.o: ../sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/files.dir/sphere.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/sphere.cpp.o -c /Users/fatihyildiz/Desktop/olduu/sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/files.dir/sphere.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/sphere.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/sphere.cpp
 
 CMakeFiles/files.dir/sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/sphere.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/sphere.cpp > CMakeFiles/files.dir/sphere.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/sphere.cpp > CMakeFiles/files.dir/sphere.cpp.i
 
 CMakeFiles/files.dir/sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/sphere.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/sphere.cpp -o CMakeFiles/files.dir/sphere.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/sphere.cpp -o CMakeFiles/files.dir/sphere.cpp.s
 
 CMakeFiles/files.dir/texture.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/texture.cpp.o: ../texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/files.dir/texture.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/texture.cpp.o -c /Users/fatihyildiz/Desktop/olduu/texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/files.dir/texture.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/texture.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/texture.cpp
 
 CMakeFiles/files.dir/texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/texture.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/texture.cpp > CMakeFiles/files.dir/texture.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/texture.cpp > CMakeFiles/files.dir/texture.cpp.i
 
 CMakeFiles/files.dir/texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/texture.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/texture.cpp -o CMakeFiles/files.dir/texture.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/texture.cpp -o CMakeFiles/files.dir/texture.cpp.s
 
 CMakeFiles/files.dir/timer.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/timer.cpp.o: ../timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/files.dir/timer.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/timer.cpp.o -c /Users/fatihyildiz/Desktop/olduu/timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/files.dir/timer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/timer.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/timer.cpp
 
 CMakeFiles/files.dir/timer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/timer.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/timer.cpp > CMakeFiles/files.dir/timer.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/timer.cpp > CMakeFiles/files.dir/timer.cpp.i
 
 CMakeFiles/files.dir/timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/timer.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/timer.cpp -o CMakeFiles/files.dir/timer.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/timer.cpp -o CMakeFiles/files.dir/timer.cpp.s
 
 CMakeFiles/files.dir/tinyxml2.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/tinyxml2.cpp.o: ../tinyxml2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/files.dir/tinyxml2.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/tinyxml2.cpp.o -c /Users/fatihyildiz/Desktop/olduu/tinyxml2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/files.dir/tinyxml2.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/tinyxml2.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/tinyxml2.cpp
 
 CMakeFiles/files.dir/tinyxml2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/tinyxml2.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/tinyxml2.cpp > CMakeFiles/files.dir/tinyxml2.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/tinyxml2.cpp > CMakeFiles/files.dir/tinyxml2.cpp.i
 
 CMakeFiles/files.dir/tinyxml2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/tinyxml2.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/tinyxml2.cpp -o CMakeFiles/files.dir/tinyxml2.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/tinyxml2.cpp -o CMakeFiles/files.dir/tinyxml2.cpp.s
 
 CMakeFiles/files.dir/translation.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/translation.cpp.o: ../translation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/files.dir/translation.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/translation.cpp.o -c /Users/fatihyildiz/Desktop/olduu/translation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/files.dir/translation.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/translation.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/translation.cpp
 
 CMakeFiles/files.dir/translation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/translation.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/translation.cpp > CMakeFiles/files.dir/translation.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/translation.cpp > CMakeFiles/files.dir/translation.cpp.i
 
 CMakeFiles/files.dir/translation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/translation.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/translation.cpp -o CMakeFiles/files.dir/translation.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/translation.cpp -o CMakeFiles/files.dir/translation.cpp.s
 
 CMakeFiles/files.dir/triangle.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/triangle.cpp.o: ../triangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/files.dir/triangle.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/triangle.cpp.o -c /Users/fatihyildiz/Desktop/olduu/triangle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/files.dir/triangle.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/triangle.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/triangle.cpp
 
 CMakeFiles/files.dir/triangle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/triangle.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/triangle.cpp > CMakeFiles/files.dir/triangle.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/triangle.cpp > CMakeFiles/files.dir/triangle.cpp.i
 
 CMakeFiles/files.dir/triangle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/triangle.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/triangle.cpp -o CMakeFiles/files.dir/triangle.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/triangle.cpp -o CMakeFiles/files.dir/triangle.cpp.s
 
 CMakeFiles/files.dir/transformInfo.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/transformInfo.cpp.o: ../transformInfo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/files.dir/transformInfo.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/transformInfo.cpp.o -c /Users/fatihyildiz/Desktop/olduu/transformInfo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/files.dir/transformInfo.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/transformInfo.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/transformInfo.cpp
 
 CMakeFiles/files.dir/transformInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/transformInfo.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/transformInfo.cpp > CMakeFiles/files.dir/transformInfo.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/transformInfo.cpp > CMakeFiles/files.dir/transformInfo.cpp.i
 
 CMakeFiles/files.dir/transformInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/transformInfo.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/transformInfo.cpp -o CMakeFiles/files.dir/transformInfo.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/transformInfo.cpp -o CMakeFiles/files.dir/transformInfo.cpp.s
 
 CMakeFiles/files.dir/Matrix.cpp.o: CMakeFiles/files.dir/flags.make
 CMakeFiles/files.dir/Matrix.cpp.o: ../Matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/files.dir/Matrix.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/Matrix.cpp.o -c /Users/fatihyildiz/Desktop/olduu/Matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/files.dir/Matrix.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/Matrix.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/Matrix.cpp
 
 CMakeFiles/files.dir/Matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/Matrix.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/olduu/Matrix.cpp > CMakeFiles/files.dir/Matrix.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/Matrix.cpp > CMakeFiles/files.dir/Matrix.cpp.i
 
 CMakeFiles/files.dir/Matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/Matrix.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/olduu/Matrix.cpp -o CMakeFiles/files.dir/Matrix.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/Matrix.cpp -o CMakeFiles/files.dir/Matrix.cpp.s
+
+CMakeFiles/files.dir/MappingData.cpp.o: CMakeFiles/files.dir/flags.make
+CMakeFiles/files.dir/MappingData.cpp.o: ../MappingData.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/files.dir/MappingData.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/files.dir/MappingData.cpp.o -c /Users/fatihyildiz/Desktop/CENG477/hw2/files/MappingData.cpp
+
+CMakeFiles/files.dir/MappingData.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/files.dir/MappingData.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fatihyildiz/Desktop/CENG477/hw2/files/MappingData.cpp > CMakeFiles/files.dir/MappingData.cpp.i
+
+CMakeFiles/files.dir/MappingData.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/files.dir/MappingData.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fatihyildiz/Desktop/CENG477/hw2/files/MappingData.cpp -o CMakeFiles/files.dir/MappingData.cpp.s
 
 # Object files for target files
 files_OBJECTS = \
@@ -442,7 +455,8 @@ files_OBJECTS = \
 "CMakeFiles/files.dir/translation.cpp.o" \
 "CMakeFiles/files.dir/triangle.cpp.o" \
 "CMakeFiles/files.dir/transformInfo.cpp.o" \
-"CMakeFiles/files.dir/Matrix.cpp.o"
+"CMakeFiles/files.dir/Matrix.cpp.o" \
+"CMakeFiles/files.dir/MappingData.cpp.o"
 
 # External object files for target files
 files_EXTERNAL_OBJECTS =
@@ -473,10 +487,11 @@ files: CMakeFiles/files.dir/translation.cpp.o
 files: CMakeFiles/files.dir/triangle.cpp.o
 files: CMakeFiles/files.dir/transformInfo.cpp.o
 files: CMakeFiles/files.dir/Matrix.cpp.o
+files: CMakeFiles/files.dir/MappingData.cpp.o
 files: CMakeFiles/files.dir/build.make
 files: /usr/local/lib/libjpeg.dylib
 files: CMakeFiles/files.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable files"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable files"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/files.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -489,6 +504,6 @@ CMakeFiles/files.dir/clean:
 .PHONY : CMakeFiles/files.dir/clean
 
 CMakeFiles/files.dir/depend:
-	cd /Users/fatihyildiz/Desktop/olduu/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/fatihyildiz/Desktop/olduu /Users/fatihyildiz/Desktop/olduu /Users/fatihyildiz/Desktop/olduu/cmake-build-debug /Users/fatihyildiz/Desktop/olduu/cmake-build-debug /Users/fatihyildiz/Desktop/olduu/cmake-build-debug/CMakeFiles/files.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/fatihyildiz/Desktop/CENG477/hw2/files /Users/fatihyildiz/Desktop/CENG477/hw2/files /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug /Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/CMakeFiles/files.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/files.dir/depend
 

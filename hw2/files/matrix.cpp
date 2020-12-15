@@ -39,35 +39,17 @@ void Matrix::Translate(float tx,float ty,float tz){
 }
 
 void Matrix::Rotate (float x,float y,float z,float alpha){
-    float rotationMatrix[4][4]={{1,0,0,0},{0,cos(alpha*pi/180),-sin(alpha*pi/180),0},{0,sin(alpha*pi/180),cos(alpha*pi/180),0},{0,0,0,1}};
-    // cout<<"cos alfa: "<< cos(alpha)<<" "<<alpha<<endl
-    //         <<"sin alfa: "<< sin(alpha)<<" "<<alpha<<endl;
+    float rotationMatrix[4][4]={{1,0,0,0},{0,cos(alpha*pi/180), -sin(alpha*pi/180),0},{0,sin(alpha*pi/180),cos(alpha*pi/180),0},{0,0,0,1}};
     findBase(x,y,z);
-
     Translate(-x,-y,-z);
-    //   cout<<"translation part of rotation"<<endl;
-    // printMtrx();
-
     rightMultiplyMatrix(baseMatrixduz);
-    // cout<<"duz base part of rotation"<<endl;
-    //  printMtrx();
     rightMultiplyMatrix(rotationMatrix);
-    //cout<<"rotation part of rotation"<<endl;
-    // printMtrx();
     rightMultiplyMatrix(baseMatrix);
-    // cout<<"base part of rotation"<<endl;
-    // printMtrx();
     Translate(x,y,z);
-    // cout<<"back translation part of rotation"<<endl;
-    // printMtrx();
-    // cout<<"rotation"<<endl;
 }
-
-
 void Matrix::findBase(float x,float y,float z) {
     float boy=sqrt(x*x+y*y+z*z);
     x/=boy,y/=boy,z/=boy;
-    // cout<<"u_x : "<<x << " u_y : "<<y << " u_z :"<< z<<endl;
     float min=x<y?x:y;
     float a,b,c;
     min=min<z?min:z;
@@ -93,29 +75,22 @@ void Matrix::findBase(float x,float y,float z) {
     a/=boy;
     b/=boy;
     c/=boy;
-    //   cout<<"v_x : "<<a << " v_y : "<<b << " v_z :"<< c<<endl;
-//    cout<<"w_x : "<<result.x << " w_y : "<<result.y << " w_z :"<< result.z<<endl;
 
     baseMatrixduz[0][0]=x,baseMatrixduz[0][1]=y,baseMatrixduz[0][2]=z,baseMatrixduz[0][3]=0,
     baseMatrixduz[1][0]=a,baseMatrixduz[1][1]=b,baseMatrixduz[1][2]=c,baseMatrixduz[1][3]=0,
     baseMatrixduz[2][0]=result.x,baseMatrixduz[2][1]=result.y,baseMatrixduz[2][2]=result.z,baseMatrixduz[2][3]=0,
     baseMatrixduz[3][0]=0,baseMatrixduz[3][1]=0,baseMatrixduz[3][2]=0,baseMatrixduz[3][3]=1;
 
-
-
     baseMatrix[0][0]=x,baseMatrix[0][1]=a,baseMatrix[0][2]=result.x,baseMatrix[0][3]=0,
     baseMatrix[1][0]=y,baseMatrix[1][1]=b,baseMatrix[1][2]=result.y,baseMatrix[1][3]=0,
     baseMatrix[2][0]=z,baseMatrix[2][1]=c,baseMatrix[2][2]=result.z,baseMatrix[2][3]=0,
     baseMatrix[3][0]=0,baseMatrix[3][1]=0,baseMatrix[3][2]=0,baseMatrix[3][3]=1;
-
-
 }
 
 
 void  Matrix:: Scale(float sx,float sy,float sz) {
     float scaleMatrix[4][4]={{sx,0,0,0},{0,sy,0,0},{0,0,sz,0},{0,0,0,1}};
     rightMultiplyMatrix(scaleMatrix);
-    //cout<<"scaling"<< endl;
 }
 
 

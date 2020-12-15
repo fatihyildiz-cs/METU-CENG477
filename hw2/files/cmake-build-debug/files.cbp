@@ -8,43 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/fatihyildiz/Desktop/olduu/cmake-build-debug"/>
+				<Option working_dir="/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/fatihyildiz/Desktop/olduu/cmake-build-debug"/>
+				<Option working_dir="/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/fatihyildiz/Desktop/olduu/cmake-build-debug"/>
+				<Option working_dir="/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="files">
-				<Option output="/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/files" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/fatihyildiz/Desktop/olduu/cmake-build-debug"/>
+				<Option output="/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/files" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/fatihyildiz/Desktop/olduu/."/>
+					<Add directory="/Users/fatihyildiz/Desktop/CENG477/hw2/files/."/>
 					<Add directory="/Library/Frameworks/Mono.framework/Headers"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -54,20 +54,20 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 files"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 files"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="files/fast">
-				<Option output="/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/files" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/fatihyildiz/Desktop/olduu/cmake-build-debug"/>
+				<Option output="/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/files" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/fatihyildiz/Desktop/olduu/."/>
+					<Add directory="/Users/fatihyildiz/Desktop/CENG477/hw2/files/."/>
 					<Add directory="/Library/Frameworks/Mono.framework/Headers"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -77,203 +77,209 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 files/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/olduu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 files/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/fatihyildiz/Desktop/CENG477/hw2/files/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/Makefile">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/Makefile">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/Matrix.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/MappingData.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/Matrix.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/MappingData.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/camera.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/Matrix.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/camera.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/Matrix.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/ctpl_stl.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/camera.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/hit_record.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/camera.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/hw2_sample_scenes/earth_and_moon.xml">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/ctpl_stl.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/hw2_sample_scenes/horse.xml">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/hit_record.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/hw2_sample_scenes/simple_transform.xml">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/hw2_sample_scenes/earth_and_moon.xml">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/hw2_sample_scenes/skybox.xml">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/hw2_sample_scenes/horse.xml">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/hw2_sample_scenes/spheres_texture_bilinear.xml">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/hw2_sample_scenes/simple_transform.xml">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/hw2_sample_scenes/spheres_texture_nearest.xml">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/hw2_sample_scenes/skybox.xml">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/hw2_sample_scenes/spheres_transform.xml">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/hw2_sample_scenes/spheres_texture_bilinear.xml">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/image.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/hw2_sample_scenes/spheres_texture_nearest.xml">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/image.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/hw2_sample_scenes/spheres_transform.xml">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/integrator.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/image.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/integrator.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/image.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/jpeg.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/integrator.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/jpeg.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/integrator.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/main.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/jpeg.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/material.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/jpeg.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/material.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/main.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/matrixInverse.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/material.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/matrixInverse.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/material.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/mesh.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/matrixInverse.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/mesh.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/matrixInverse.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/parser.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/mesh.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/parser.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/mesh.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/point_light.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/parser.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/point_light.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/parser.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/ppm.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/point_light.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/ppm.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/point_light.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/ray.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/ppm.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/ray.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/ppm.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/rotation.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/ray.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/rotation.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/ray.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_jpeg_to_ppm.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/rotation.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_matrix_inversion.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/rotation.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/sample_main_files/main_for_write_jpeg_file.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_jpeg_to_ppm.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/scaling.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_matrix_inversion.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/scaling.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/sample_main_files/main_for_write_jpeg_file.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/scene.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/scaling.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/scene.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/scaling.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/sphere.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/scene.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/sphere.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/scene.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/texture.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/sphere.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/texture.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/sphere.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/timer.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/texture.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/timer.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/texture.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/tinyxml2.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/timer.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/tinyxml2.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/timer.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/transformInfo.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/tinyxml2.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/transformInfo.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/tinyxml2.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/translation.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/transformInfo.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/translation.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/transformInfo.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/triangle.cpp">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/translation.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/triangle.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/translation.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/triangular.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/triangle.cpp">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/utility.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/triangle.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/vector2f.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/triangular.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/vector3f.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/utility.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/vector4f.h">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/vector2f.h">
 			<Option target="files"/>
 		</Unit>
-		<Unit filename="/Users/fatihyildiz/Desktop/olduu/CMakeLists.txt">
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/vector3f.h">
+			<Option target="files"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/vector4f.h">
+			<Option target="files"/>
+		</Unit>
+		<Unit filename="/Users/fatihyildiz/Desktop/CENG477/hw2/files/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

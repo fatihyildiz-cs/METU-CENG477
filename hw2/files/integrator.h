@@ -1,6 +1,8 @@
 #pragma once
 
 #include "scene.h"
+#include "vector3f.h"
+#include "MappingData.h"
 
 namespace fst
 {
@@ -13,7 +15,7 @@ namespace fst
         void integrate();
 
         void doTransformations();
-        int MapSphere(math::Vector3f a,math::Vector3f center,float radius,int height,int width)const;
+        MappingData MapSphere(math::Vector3f &a,math::Vector3f& center,float &radius,int &height,int &width)const;
         void doTextureMapping();
         Scene m_scene;
     private:

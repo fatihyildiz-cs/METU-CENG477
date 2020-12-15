@@ -72,7 +72,7 @@ add_executable(files
         utility.h
         vector2f.h
         vector3f.h
-        vector4f.h transformInfo.cpp transformInfo.h Matrix.cpp Matrix.h matrix.cpp matrix.h)
+        vector4f.h transformInfo.cpp transformInfo.h Matrix.cpp Matrix.h matrix.cpp matrix.h MappingData.cpp MappingData.h)
 
 find_package(JPEG REQUIRED)
 
