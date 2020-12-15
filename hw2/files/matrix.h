@@ -4,6 +4,7 @@
 #include <cmath>
 #include <iostream>
 #include "vector3f.h"
+
 #ifndef FILES_MATRIX_H
 #define FILES_MATRIX_H
 
@@ -28,7 +29,7 @@ public:
     void rightMultiplyMatrix( float **m1) ;
 
     void printMatrix();
-    void doAllTransformations(Vector3f &point) ;
+     Vector3f doAllTransformations(Vector3f  point) ;
     void findBase(float x,float y,float z);
 
 

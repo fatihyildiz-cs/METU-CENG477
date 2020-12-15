@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/fatihyildiz/Desktop/CENG477/hw2/files/. -I/Library/Frameworks/Mono.framework/Headers 
+CXX_INCLUDES = -I/Users/fatihyildiz/Desktop/olduu/. -I/Library/Frameworks/Mono.framework/Headers 
 

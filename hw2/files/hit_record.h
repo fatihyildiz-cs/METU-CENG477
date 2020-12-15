@@ -9,5 +9,10 @@ namespace fst
         math::Vector3f normal;
         float distance;
         int material_id;
+        int texture_id;
+        bool isSphere=0;
+        math::Vector3f center;
+        float radius;
+
     };
 }

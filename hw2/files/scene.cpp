@@ -109,7 +109,7 @@ namespace fst
             }
             vector<TransformInfo> transformInfos = getTransformInfos(mesh.transformations);
 
-            int textureId = (mesh.texture_id > 0) && (mesh.texture_id <= parser.textures.size()) ? mesh.texture_id : -1;
+            int textureId = (mesh.texture_id > 0) && (mesh.texture_id <= parser.textures.size()) ? mesh.texture_id :-1;
             meshes.push_back(Mesh(std::move(triangles), mesh.material_id, transformInfos, textureId));
         }
 
@@ -149,17 +149,23 @@ namespace fst
         for (auto& sphere : spheres)
         {
             if (sphere.intersect(ray, temp, min_distance))
-            {
+            {   temp.texture_id=sphere.textureId;
+            cout<<"sphere text id : " <<sphere.textureId<<endl;
+                temp.center=sphere.m_center;
+                temp.radius=sphere.m_radius;
                 min_distance = temp.distance;
+                temp.isSphere=1;
                 hit_record = temp;
+
             }
         }
 
         for (auto& mesh : meshes)
         {
             if (mesh.intersect(ray, temp, min_distance))
-            {
+            {   temp.texture_id=mesh.textureId;
                 min_distance = temp.distance;
+                temp.isSphere=0;
                 hit_record = temp;
             }
         }

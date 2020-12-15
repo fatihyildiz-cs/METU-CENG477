@@ -5,6 +5,7 @@
 #include "matrix.h"
 #include "vector3f.h"
 
+
 #define _USE_MATH_DEFINES
 
 float pi = 3.14159265359;
@@ -160,7 +161,7 @@ void Matrix:: rightMultiplyMatrix( float **m1 ) {
 
 
 }
-void Matrix:: doAllTransformations( fst::math::Vector3f  & point ) {
+  Vector3f Matrix:: doAllTransformations( fst::math::Vector3f   point ) {
     float oneDimensional[1][4];
     oneDimensional[0][0]=point.x;
     oneDimensional[0][1]=point.y;
@@ -176,11 +177,11 @@ void Matrix:: doAllTransformations( fst::math::Vector3f  & point ) {
         }
         sonuc[0][i] = total;
     }
-    point.x=sonuc[0][0];
-    point.y=sonuc[0][1];
-    point.z=sonuc[0][2];
 
 
+
+
+   return Vector3f(sonuc[0][0],sonuc[0][1],sonuc[0][2]);
 }
 void Matrix:: printMatrix() {
 

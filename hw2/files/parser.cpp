@@ -129,8 +129,9 @@ void parser::Scene::loadFromXml(const std::string& filepath)
         }
         else {
 
-            material.mirror.x=0, material.mirror.y=0, material.mirror.z=0;
+            material.mirror.x=0,material.mirror.y=0,material.mirror.z=0;
         }
+        
         child = element->FirstChildElement("AmbientReflectance");
         stream << child->GetText() << std::endl;
         child = element->FirstChildElement("DiffuseReflectance");
@@ -302,6 +303,7 @@ void parser::Scene::loadFromXml(const std::string& filepath)
             stream >> triangle.texture_id;
         }
 
+
         child = element->FirstChildElement("Transformations");
         
         if (child) {
@@ -321,10 +323,9 @@ void parser::Scene::loadFromXml(const std::string& filepath)
     //Get Spheres
     element = root->FirstChildElement("Objects");
     element = element->FirstChildElement("Sphere");
-    
+
     while (element)
-    {
-        Sphere sphere;
+    {        Sphere sphere;
         child = element->FirstChildElement("Material");
         stream << child->GetText() << std::endl;
         stream >> sphere.material_id;
@@ -336,6 +337,8 @@ void parser::Scene::loadFromXml(const std::string& filepath)
             stream << child->GetText() << std::endl;
             stream >> sphere.texture_id;
         }
+
+
 
         child = element->FirstChildElement("Transformations");
 

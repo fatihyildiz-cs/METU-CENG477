@@ -4,13 +4,13 @@
 
 namespace fst
 {
-    Sphere::Sphere(const math::Vector3f& center, float radius, int material_id)
+    Sphere::Sphere(const math::Vector3f center, float radius, int material_id)
         : m_center(center)
         , m_radius(radius)
         , m_material_id(material_id)
     {}
 
-    Sphere::Sphere(const math::Vector3f& center, float radius, int material_id, std::vector<TransformInfo> transformInfos, int textureId)
+    Sphere::Sphere(const math::Vector3f center, float radius, int material_id, std::vector<TransformInfo> transformInfos, int textureId)
             : m_center(center)
             , m_radius(radius)
             , m_material_id(material_id)

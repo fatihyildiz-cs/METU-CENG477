@@ -9,7 +9,35 @@
 using namespace std;
 using namespace fst::math;
 namespace fst
-{
+{   int Integrator::MapSphere(math::Vector3f a,math::Vector3f center,float radius,int height,int width) const {
+
+
+    float pi=3.141592;
+
+        a.x-=center.x;
+        a.y-=center.y;
+        a.z-=center.z;
+
+        float Q = acos(a.y / radius);
+        float  Y= atan2(a.z ,a.x);
+        float u = (-Y + pi) / (2*pi);
+        float v= Q/ pi;
+        if(u <0 )
+            u=0;
+        if(u>1)
+            u=1;
+        if(v<0)
+            v=0;
+        if(v>1)
+            v=1;
+        int i=u*width;
+        int j=v*height;
+
+
+
+        return  (j * width + i) * 3;
+
+    }
     Integrator::Integrator(const parser::Scene& parser)
     {
         m_scene.loadFromParser(parser);
@@ -22,7 +50,9 @@ namespace fst
             return math::Vector3f(0.0f, 0.0f, 0.0f);
         }
 
+
         HitRecord hit_record;
+        hit_record.texture_id=-1;
         auto result = m_scene.intersect(ray, hit_record, std::numeric_limits<float>::max());
 
         if (!result)
@@ -43,8 +73,30 @@ namespace fst
             Ray shadow_ray(intersection_point + m_scene.shadow_ray_epsilon * to_light, to_light);
 
             if (!m_scene.intersectShadowRay(shadow_ray, light_pos_distance))
-            {
-                color = color + light.computeRadiance(light_pos_distance) * material.computeBrdf(to_light, -ray.get_direction(), hit_record.normal);
+            {           math::Vector3f tempdif;
+                        tempdif.x=m_scene.materials[hit_record.material_id].m_diffuse.x;
+                        tempdif.y=m_scene.materials[hit_record.material_id].m_diffuse.y;
+                        tempdif.z=m_scene.materials[hit_record.material_id].m_diffuse.z;
+               if(hit_record.texture_id!=-1 ){
+
+                cout<<hit_record.texture_id<<endl;
+               cout <<  m_scene.textures[hit_record.texture_id-1].m_height << endl;
+                if(hit_record.isSphere){
+                int tempDiffuseIndex=MapSphere(intersection_point,hit_record.center,hit_record.radius,
+
+                                          m_scene.textures[hit_record.texture_id-1].m_height,m_scene.textures[hit_record.texture_id-1].m_width);
+
+                tempdif.x=m_scene.textures[hit_record.texture_id-1].m_image[tempDiffuseIndex];
+                tempdif.y=m_scene.textures[hit_record.texture_id-1].m_image[tempDiffuseIndex+1];
+                tempdif.z=m_scene.textures[hit_record.texture_id-1].m_image[tempDiffuseIndex+2];
+
+                }
+               }
+
+                color = color + light.computeRadiance(light_pos_distance) * material.computeBrdf(to_light, -ray.get_direction(), hit_record.normal, tempdif);
+
+
+
             }
         }
 
@@ -91,7 +143,7 @@ namespace fst
 
             }
 
-            myMatrix.doAllTransformations(sphere.m_center);
+            sphere.m_center=myMatrix.doAllTransformations(sphere.m_center);
         }
 
         i = 1;
@@ -123,9 +175,9 @@ namespace fst
                 mesh.m_triangles[i].m_edge2.x+=mesh.m_triangles[i].m_v0.x;
                 mesh.m_triangles[i].m_edge2.y+=mesh.m_triangles[i].m_v0.y;
                 mesh.m_triangles[i].m_edge2.z+=mesh.m_triangles[i].m_v0.z;
-                myMatrix.doAllTransformations(mesh.m_triangles[i].m_v0);
-                myMatrix.doAllTransformations(mesh.m_triangles[i].m_edge1);
-                myMatrix.doAllTransformations(mesh.m_triangles[i].m_edge2);
+                mesh.m_triangles[i].m_v0=myMatrix.doAllTransformations(mesh.m_triangles[i].m_v0);
+                mesh.m_triangles[i].m_edge1=myMatrix.doAllTransformations(mesh.m_triangles[i].m_edge1);
+                mesh.m_triangles[i].m_edge2=myMatrix.doAllTransformations(mesh.m_triangles[i].m_edge2);
                 mesh.m_triangles[i].m_edge1.x-=mesh.m_triangles[i].m_v0.x;
                 mesh.m_triangles[i].m_edge1.y-=mesh.m_triangles[i].m_v0.y;
                 mesh.m_triangles[i].m_edge1.z-=mesh.m_triangles[i].m_v0.z;
@@ -134,8 +186,12 @@ namespace fst
                 mesh.m_triangles[i].m_edge2.y-=mesh.m_triangles[i].m_v0.y;
                 mesh.m_triangles[i].m_edge2.z-=mesh.m_triangles[i].m_v0.z;
                 mesh.m_triangles[i].m_normal=math::normalize(math::cross(mesh.m_triangles[i].m_edge1,mesh.m_triangles[i].m_edge2));
+
             }
+
+
         }
+
     }
 
     void Integrator:: doTextureMapping(){
@@ -148,9 +204,9 @@ namespace fst
 
                 Texture texture = m_scene.textures[sphere.textureId-1];
 
-
+                cout <<  texture.m_height << endl;
                 cout <<  texture.m_imageName << endl;
-
+               cout << (int)texture.m_image[12]<< endl;
             }
         }
 
@@ -163,13 +219,14 @@ namespace fst
                 Texture texture = m_scene.textures[mesh.textureId-1];
 
                 cout <<  texture.m_imageName << endl;
+                cout << (int)texture.m_image[2]<< endl;
             }
         }
     };
 
     void Integrator::integrate()
     {
-        doTextureMapping();
+      //  doTextureMapping();
         doTransformations();
 
         for (auto& camera : m_scene.cameras)
