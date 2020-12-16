@@ -9,9 +9,9 @@
 class MappingData {
 
 public:
-    float i;
-    float j;
-    MappingData(float i, float j);
+    float u;
+    float v;
+    MappingData(float u, float v);
 };
 
 

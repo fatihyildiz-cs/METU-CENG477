@@ -21,26 +21,59 @@ namespace fst
         float  Y= atan2(a.z ,a.x);
         float u = (-Y + pi) / (2*pi);
         float v= Q/ pi;
-        if(u <0 )
-            u=0;
-        if(u>1)
-            u=1;
-        if(v<0)
-            v=0;
-        if(v>1)
-            v=1;
-        float i=u*width;
-        float j=v*height;
 
-//        return (int)((j * width + i) * 3);
-
-        return MappingData(i,j);
+        return MappingData(u,v);
     }
     Integrator::Integrator(const parser::Scene& parser)
     {
         m_scene.loadFromParser(parser);
     }
 
+    Vector3f getColor(float u, float v, Texture texture){
+        if (texture.m_appearance == "clamp") {
+            u = fmax(0., fmin(1., u));
+            v = fmax(0., fmin(1., v));
+        } else {
+            u -= floor(u);
+            v -= floor(v);
+        }
+        u *= texture.m_width;
+        if (u >= texture.m_width) u--;
+        v *= texture.m_height;
+        if (v >= texture.m_height) v--;
+        Vector3f color;
+        if (texture.m_interpolation == "bilinear") {
+
+            const unsigned int p = u;
+            const unsigned int q = v;
+            const float dx = u - p;
+            const float dy = v - q;
+            const unsigned int pos = q * texture.m_width * 3 + p * 3;
+            color.x = texture.m_image[pos] * (1 - dx) * (1 - dy);
+            color.x += texture.m_image[pos + 3] * (dx) * (1 - dy);
+            color.x += texture.m_image[pos + 3 + texture.m_width * 3] * (dx) * (dy);
+            color.x += texture.m_image[pos + texture.m_width * 3] * (1 - dx) * (dy);
+
+            color.y = texture.m_image[pos + 1] * (1 - dx) * (1 - dy);
+            color.y += texture.m_image[pos + 3 + 1] * (dx) * (1 - dy);
+            color.y += texture.m_image[pos + 3 + texture.m_width * 3 + 1] * (dx) * (dy);
+            color.y += texture.m_image[pos + texture.m_width * 3 + 1] * (1 - dx) * (dy);
+
+            color.z = texture.m_image[pos + 2] * (1 - dx) * (1 - dy);
+            color.z += texture.m_image[pos + 3 + 2] * (dx) * (1 - dy);
+            color.z += texture.m_image[pos + 3 + texture.m_width * 3 + 2] * (dx) * (dy);
+            color.z += texture.m_image[pos + texture.m_width * 3 + 2] * (1 - dx) * (dy);
+        }
+        else {
+
+            const unsigned int pos = ((int)v) * texture.m_width * 3 + ((int)u) * 3;
+            color.x = texture.m_image[pos];
+            color.y = texture.m_image[pos + 1];
+            color.z = texture.m_image[pos + 2];
+        }
+
+        return color;
+    }
     math::Vector3f Integrator::renderPixel(const Ray& ray, int depth) const
     {
         if (depth > m_scene.max_recursion_depth)
@@ -82,44 +115,8 @@ namespace fst
                         MappingData mappingData=MapSphere(intersection_point,hit_record.center,hit_record.radius,
                                                        texture.m_height,texture.m_width);
 
-                        int tempDiffuseIndex;
-                        bool isBilinear = texture.m_interpolation == "bilinear";
-
-                        float i = mappingData.i;
-                        float j = mappingData.j;
-
-                        if(isBilinear){
-                            int p = floor(i);
-                            int q = floor(j);
-                            float dx = i-p;
-                            float dy = j-q;
-
-                            tempdif.x = texture.m_image[(int)((q * texture.m_width + p) * 3)]*(1-dx)*(1-dy)
-                                    + texture.m_image[(int)((q * texture.m_width + (p+1) ) * 3)]*(dx)*(1-dy)
-                                    + texture.m_image[(int)(( (q+1) * texture.m_width + p) * 3)]*(1-dx) * (dy)
-                                    + texture.m_image[(int)(( (q+1) * texture.m_width + (p+1) ) * 3)]*(dx)*(dy);
-
-                            tempdif.y = texture.m_image[(int)((q * texture.m_width + p) * 3) +1]*(1-dx)*(1-dy)
-                                        + texture.m_image[(int)((q * texture.m_width + (p+1) ) * 3) +1]*(dx)*(1-dy)
-                                        + texture.m_image[(int)(( (q+1) * texture.m_width + p) * 3) +1]*(1-dx) * (dy)
-                                        + texture.m_image[(int)(( (q+1) * texture.m_width + (p+1) ) * 3) +1]*(dx)*(dy);
-
-                            tempdif.z = texture.m_image[(int)((q * texture.m_width + p) * 3) +2]*(1-dx)*(1-dy)
-                                        + texture.m_image[(int)((q * texture.m_width + (p+1) ) * 3) +2]*(dx)*(1-dy)
-                                        + texture.m_image[(int)(( (q+1) * texture.m_width + p) * 3) +2]*(1-dx) * (dy)
-                                        + texture.m_image[(int)(( (q+1) * texture.m_width + (p+1) ) * 3) +2]*(dx)*(dy);
-
-                        }
-                        else{
-                            i = (i - floor(i)) < 0.5 ? floor(i) : ceil(i);
-                            j = (j - floor(j)) < 0.5 ? floor(j) : ceil(j);
-
-                            tempDiffuseIndex = ((j * texture.m_width + i) * 3);
-
-                            tempdif.x=texture.m_image[tempDiffuseIndex];
-                            tempdif.y=texture.m_image[tempDiffuseIndex+1];
-                            tempdif.z=texture.m_image[tempDiffuseIndex+2];
-                        }
+                        //this function can be used for mesh too.
+                        tempdif = getColor(mappingData.u, mappingData.v, texture);
 
                         if(texture.m_decalMode=="replace_kd"){
                             tempdif=tempdif/255;
@@ -134,6 +131,8 @@ namespace fst
                     }
                     else{
                         //implement mesh texture mapping here
+
+                        //here we can use the getColor() function I used in sphere texture mapping
                     }
                         color = color +light.computeRadiance(light_pos_distance) * material.computeBrdf(to_light, -ray.get_direction(), hit_record.normal, tempdif,isReplaceAll)
                                 +isReplaceAll*tempdif;
