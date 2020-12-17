@@ -1,3 +1,4 @@
+#include <iostream>
 #include "mesh.h"
 #include "hit_record.h"
 #include "ray.h"
@@ -30,9 +31,12 @@ namespace fst
         {
             if (triangle.intersect(ray, temp, min_distance) && math::dot(temp.normal, ray.get_direction()) < 0.0f)
             {
+
                 min_distance = temp.distance;
                 hit_record = temp;
 		        hit_record.material_id = m_material_id;
+		        hit_record.faceOfTheIntersectedTriangle = triangle.faceInfo;
+		        hit_record.intersectedTriangle = triangle;
             }
         }
 

@@ -2,6 +2,7 @@
 
 #include "utility.h"
 #include <cmath>
+#include <ostream>
 
 namespace fst
 {
@@ -51,6 +52,11 @@ namespace fst
             float operator [] (int i) const
             {
                 return (&x)[i];
+            }
+
+            friend std::ostream &operator<<(std::ostream &os, const Vector3f &f) {
+                os << "x: " << f.x << " y: " << f.y << " z: " << f.z;
+                return os;
             }
         };
 

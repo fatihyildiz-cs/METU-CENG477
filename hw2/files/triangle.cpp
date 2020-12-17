@@ -11,12 +11,12 @@ namespace fst
         , m_normal(math::normalize(math::cross(edge1, edge2)))
     {}
 
-    Triangle::Triangle(const math::Vector3f& v0, const math::Vector3f& edge1, const math::Vector3f& edge2, std::vector<TransformInfo> transformInfos)
+    Triangle::Triangle(const math::Vector3f& v0, const math::Vector3f& edge1, const math::Vector3f& edge2, parser::Face faceInfo)
             : m_v0(v0)
             , m_edge1(edge1)
             , m_edge2(edge2)
             , m_normal(math::normalize(math::cross(edge1, edge2)))
-            , transformInfos(transformInfos)
+            , faceInfo(faceInfo)
     {}
 
     bool Triangle::intersect(const Ray& ray, HitRecord& hit_record, float max_distance) const
@@ -78,4 +78,8 @@ namespace fst
         auto distance = math::dot(m_edge2, qvec) * inv_det;
         return distance > 0.0f && distance < max_distance;
     }
+
+    Triangle::Triangle() {}
+
+
 }

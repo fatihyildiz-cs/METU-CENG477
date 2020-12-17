@@ -38,6 +38,8 @@ namespace fst
         int max_recursion_depth;
 
         //Functions
+
+        float findBarycentricCoordinates(parser::Face faceInfo);
         void loadFromParser(const parser::Scene &parser);
         bool intersect(const Ray &ray, HitRecord &hit_record, float max_distance) const;
         bool intersectShadowRay(const Ray &ray, float max_distance) const;

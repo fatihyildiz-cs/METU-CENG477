@@ -30,7 +30,7 @@ public:
 
     void printMatrix();
      Vector3f doAllTransformations(Vector3f  point) ;
-    void findBase(float x,float y,float z);
+    void findBase(float x,float y,float z) const;
 
 
 };

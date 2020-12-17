@@ -10,26 +10,75 @@ using namespace std;
 using namespace fst::math;
 namespace fst
 {
-    MappingData Integrator::MapSphere(math::Vector3f &a,math::Vector3f &center,float &radius,int &height,int& width) const {
+    MappingData Integrator::MapSphere(math::Vector3f &a,math::Vector3f center,float &radius,int &height,int& width) const {
 
 
     float pi=3.141592;
 
-        a=a-center;
+         //a=a-center;
 
         float Q = acos(a.y / radius);
-        float  Y= atan2(a.z ,a.x);
+        float Y= atan2(a.z ,a.x);
         float u = (-Y + pi) / (2*pi);
         float v= Q/ pi;
 
         return MappingData(u,v);
     }
+
+
+    MappingData Integrator::MapTriangle(const HitRecord& hit_record, const Texture& texture, math::Vector3f barycentricCoordinates) const {
+
+        parser::Face face = hit_record.faceOfTheIntersectedTriangle;
+
+        float beta = barycentricCoordinates.y;
+        float gama = barycentricCoordinates.z;
+
+        float ua = m_scene.tex_coord_data[face.v0_id-1].x;
+        float va = m_scene.tex_coord_data[face.v0_id-1].y;
+
+        float ub = m_scene.tex_coord_data[face.v1_id-1].x;
+        float vb = m_scene.tex_coord_data[face.v1_id-1].y;
+
+        float uc = m_scene.tex_coord_data[face.v2_id-1].x;
+        float vc = m_scene.tex_coord_data[face.v2_id-1].y;
+
+        float u = ua + beta*(ub-ua) + gama*(uc-ua);
+        float v = va + beta*(vb-va) + gama*(vc-va);
+
+
+        return MappingData(u,v);
+    }
+
+    math::Vector3f Integrator::findBarycentricCoordinates(math::Vector3f P, Triangle triangle, math::Vector3f normal) const {
+
+
+        math::Vector3f a,b,c;
+
+        a = triangle.m_v0;
+        b = triangle.m_edge1 + triangle.m_v0;
+        c = triangle.m_edge2 + triangle.m_v0;
+
+        math::Vector3f bary ;
+
+        // The area of a triangle is
+        float areaABC = dot( normal, cross( (b - a), (c - a) )  ) ;
+        float areaPBC = dot( normal, cross( (b - P), (c - P) )  ) ;
+        float areaPCA = dot( normal, cross( (c - P), (a - P) )  ) ;
+
+        bary.x = areaPBC / areaABC ; // alpha
+        bary.y = areaPCA / areaABC ; // beta
+        bary.z = 1.0f - bary.x - bary.y ; // gamma
+
+        return bary ;
+    }
+
+
     Integrator::Integrator(const parser::Scene& parser)
     {
         m_scene.loadFromParser(parser);
     }
 
-    Vector3f getColor(float u, float v, Texture texture){
+    Vector3f getColor(float u, float v, const Texture& texture){
         if (texture.m_appearance == "clamp") {
             u = fmax(0., fmin(1., u));
             v = fmax(0., fmin(1., v));
@@ -37,11 +86,14 @@ namespace fst
             u -= floor(u);
             v -= floor(v);
         }
+
         u *= texture.m_width;
         if (u >= texture.m_width) u--;
+
         v *= texture.m_height;
         if (v >= texture.m_height) v--;
         Vector3f color;
+
         if (texture.m_interpolation == "bilinear") {
 
             const unsigned int p = u;
@@ -49,6 +101,8 @@ namespace fst
             const float dx = u - p;
             const float dy = v - q;
             const unsigned int pos = q * texture.m_width * 3 + p * 3;
+
+
             color.x = texture.m_image[pos] * (1 - dx) * (1 - dy);
             color.x += texture.m_image[pos + 3] * (dx) * (1 - dy);
             color.x += texture.m_image[pos + 3 + texture.m_width * 3] * (dx) * (dy);
@@ -81,7 +135,7 @@ namespace fst
             return math::Vector3f(0.0f, 0.0f, 0.0f);
         }
 
-        bool isReplaceAll=0;
+        bool isReplaceAll=false;
         HitRecord hit_record;
         hit_record.texture_id=-1;
         auto result = m_scene.intersect(ray, hit_record, std::numeric_limits<float>::max());
@@ -107,35 +161,44 @@ namespace fst
             {
                 if(hit_record.texture_id!=-1 ){
                     Texture texture=m_scene.textures[hit_record.texture_id-1];
-                    Vector3f tempdif;
-                    tempdif=m_scene.materials[hit_record.material_id].m_diffuse;
+                    Vector3f newColor;
+                    newColor=m_scene.materials[hit_record.material_id].m_diffuse;
+
+                    MappingData mappingData;
+
                     if(hit_record.isSphere){
 
+                        //implement sphere texture mapping here
 
-                        MappingData mappingData=MapSphere(intersection_point,hit_record.center,hit_record.radius,
+                        math::Vector3f newIntersectionPoint=intersection_point;
+                        newIntersectionPoint=newIntersectionPoint-hit_record.center;
+                        newIntersectionPoint=convertFromGlobalToLocal(newIntersectionPoint, hit_record.intersectedSphere.m_u, hit_record.intersectedSphere.m_v, hit_record.intersectedSphere.m_w);
+
+                        mappingData=MapSphere(newIntersectionPoint,hit_record.center,hit_record.radius,
                                                        texture.m_height,texture.m_width);
-
-                        //this function can be used for mesh too.
-                        tempdif = getColor(mappingData.u, mappingData.v, texture);
-
-                        if(texture.m_decalMode=="replace_kd"){
-                            tempdif=tempdif/255;
-                        }
-                        else if(texture.m_decalMode=="blend_kd"){
-                            tempdif=(tempdif/255+m_scene.materials[hit_record.material_id-1].m_diffuse)/2;
-                        }
-                        else if(texture.m_decalMode=="replace_all"){
-
-                            isReplaceAll=1;
-                        }
                     }
                     else{
                         //implement mesh texture mapping here
 
-                        //here we can use the getColor() function I used in sphere texture mapping
+                        math::Vector3f barycentricCoordinates = findBarycentricCoordinates(intersection_point, hit_record.intersectedTriangle,hit_record.normal);
+                        mappingData = MapTriangle(hit_record, texture, barycentricCoordinates);
                     }
-                        color = color +light.computeRadiance(light_pos_distance) * material.computeBrdf(to_light, -ray.get_direction(), hit_record.normal, tempdif,isReplaceAll)
-                                +isReplaceAll*tempdif;
+
+                    newColor = getColor(mappingData.u, mappingData.v, texture);
+
+                    if(texture.m_decalMode=="replace_kd"){
+                        newColor= newColor / 255;
+                    }
+                    else if(texture.m_decalMode=="blend_kd"){
+                        newColor= (newColor / 255 + m_scene.materials[hit_record.material_id - 1].m_diffuse) / 2;
+                    }
+                    else if(texture.m_decalMode=="replace_all"){
+
+                        isReplaceAll=true;
+                    }
+
+                    color = color +light.computeRadiance(light_pos_distance) * material.computeBrdf(to_light, -ray.get_direction(), hit_record.normal, newColor, isReplaceAll)
+                                + isReplaceAll * newColor;
                 }
                 else{
 
@@ -143,6 +206,7 @@ namespace fst
                 }
             }
         }
+
         auto& mirror = material.get_mirror();
         if (mirror.x + mirror.y + mirror.z > 0.0f)
         {
@@ -157,6 +221,20 @@ namespace fst
         }
     }
 
+    math::Vector3f Integrator::convertFromGlobalToLocal(math::Vector3f point, math::Vector3f u, math::Vector3f v, math::Vector3f w) const {
+
+        Matrix Mconvert;
+        float mat [4][4]={{u.x, u.y, u.z, 0},
+                          {v.x, v.y, v.z,0},
+                          {w.x, w.y, w.z, 0},
+                          {0  , 0  , 0  , 1}};
+
+        Mconvert.rightMultiplyMatrix(mat);
+
+        point = Mconvert.doAllTransformations(point);
+
+        return point;
+    }
 
     void Integrator::doTransformations() {
 
@@ -182,6 +260,18 @@ namespace fst
                 else{}
             }
             sphere.m_center=myMatrix.doAllTransformations(sphere.m_center);
+
+            sphere.m_u = myMatrix.doAllTransformations(sphere.m_u);
+            sphere.m_v = myMatrix.doAllTransformations(sphere.m_v);
+            sphere.m_w = myMatrix.doAllTransformations(sphere.m_w);
+            sphere.localCoordinateSystemCenter=myMatrix.doAllTransformations(sphere.localCoordinateSystemCenter);
+            sphere.m_u=sphere.m_u-sphere.localCoordinateSystemCenter;
+            sphere.m_v=sphere.m_v-sphere.localCoordinateSystemCenter;
+            sphere.m_w=sphere.m_w-sphere.localCoordinateSystemCenter;
+            sphere.m_w=normalize(sphere.m_w);
+            sphere.m_u=normalize(sphere.m_u);
+            sphere.m_v=normalize(sphere.m_v);
+
         }
 
         for (auto& mesh : m_scene.meshes)
@@ -225,18 +315,12 @@ namespace fst
             }
         }
     }
-    void Integrator::doTextureMapping() {
-        int i=1;
-        for(Sphere sphere : m_scene.spheres){
-            cout <<"Sphere number " << i++ << ": " << sphere.textureId << endl;
-        }
-    }
 
     void Integrator::integrate()
     {
 
         doTransformations();
-//        doTextureMapping();
+
         for (auto& camera : m_scene.cameras)
         {
             auto& resolution = camera.get_screen_resolution();

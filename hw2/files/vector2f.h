@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ostream>
+
 namespace fst
 {
     namespace math
@@ -17,6 +19,11 @@ namespace fst
                 : x(a)
                 , y(b)
             {}
+
+            friend std::ostream &operator<<(std::ostream &os, const Vector2f &f) {
+                os << "x: " << f.x << " y: " << f.y;
+                return os;
+            }
         };
     }
 }

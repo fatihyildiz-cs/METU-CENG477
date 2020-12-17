@@ -27,8 +27,8 @@ Matrix::~Matrix(){
         delete [] baseMatrixduz[i];
         delete [] baseMatrix[i];
     }
-    baseMatrix=NULL;
-    baseMatrixduz=NULL;
+    baseMatrix=nullptr;
+    baseMatrixduz=nullptr;
 
 }
 void Matrix::Translate(float tx,float ty,float tz){
@@ -47,9 +47,9 @@ void Matrix::Rotate (float x,float y,float z,float alpha){
     rightMultiplyMatrix(baseMatrix);
     Translate(x,y,z);
 }
-void Matrix::findBase(float x,float y,float z) {
-    float boy=sqrt(x*x+y*y+z*z);
-    x/=boy,y/=boy,z/=boy;
+void Matrix::findBase(float x,float y,float z) const {
+    float length=sqrt(x * x + y * y + z * z);
+    x/=length, y/=length, z/=length;
     float min=x<y?x:y;
     float a,b,c;
     min=min<z?min:z;
@@ -59,22 +59,23 @@ void Matrix::findBase(float x,float y,float z) {
     else if(min==y) {
         b=0,c=x,a=-1*z;
     }
-    else if (min==z){
+    else {
         c=0,a=-1*y,b=x;
     }
+
     Vector3f result;
     result.x=y*c- 1*b * z;
     result.y= a * z -1* x * c;
     result.z=x * b - 1*a * y;
 
-    boy=sqrt(result.x*result.x+result.y*result.y+result.z*result.z);
-    result.x/=boy;
-    result.y/=boy;
-    result.z/=boy;
-    boy=sqrt(a*a+b*b+c*c);
-    a/=boy;
-    b/=boy;
-    c/=boy;
+    length=sqrt(result.x * result.x + result.y * result.y + result.z * result.z);
+    result.x/=length;
+    result.y/=length;
+    result.z/=length;
+    length=sqrt(a * a + b * b + c * c);
+    a/=length;
+    b/=length;
+    c/=length;
 
     baseMatrixduz[0][0]=x,baseMatrixduz[0][1]=y,baseMatrixduz[0][2]=z,baseMatrixduz[0][3]=0,
     baseMatrixduz[1][0]=a,baseMatrixduz[1][1]=b,baseMatrixduz[1][2]=c,baseMatrixduz[1][3]=0,
@@ -96,7 +97,7 @@ void  Matrix:: Scale(float sx,float sy,float sz) {
 
 void Matrix:: rightMultiplyMatrix( float m1[4][4] ) {
     float total=0;
-    float sonuc[4][4];
+    float result[4][4];
 
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++) {
@@ -104,20 +105,20 @@ void Matrix:: rightMultiplyMatrix( float m1[4][4] ) {
             for (int k = 0; k < 4; k++) {
                 total += m1[i][k] * identity[k][j];
             }
-            sonuc[i][j] = total;
+            result[i][j] = total;
 
         }
     }
 
     for (int i=0;i<4;i++)
         for(int j=0;j<4;j++)
-            identity[i][j]=sonuc[i][j];
+            identity[i][j]=result[i][j];
 
 
 }
 void Matrix:: rightMultiplyMatrix( float **m1 ) {
     float total=0;
-    float sonuc[4][4];
+    float result[4][4];
 
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++) {
@@ -125,16 +126,13 @@ void Matrix:: rightMultiplyMatrix( float **m1 ) {
             for (int k = 0; k < 4; k++) {
                 total += m1[i][k] * identity[k][j];
             }
-            sonuc[i][j] = total;
-
+            result[i][j] = total;
         }
     }
 
     for (int i=0;i<4;i++)
         for(int j=0;j<4;j++)
-            identity[i][j]=sonuc[i][j];
-
-
+            identity[i][j]=result[i][j];
 }
   Vector3f Matrix:: doAllTransformations( fst::math::Vector3f   point ) {
     float oneDimensional[1][4];
@@ -143,21 +141,19 @@ void Matrix:: rightMultiplyMatrix( float **m1 ) {
     oneDimensional[0][2]=point.z;
     oneDimensional[0][3]=1;
     float total=0;
-    float sonuc[1][4];
+    float result[1][4];
 
     for(int i=0;i<4;i++){
         total = 0;
         for(int j=0;j<4;j++) {
             total += identity[i][j] * oneDimensional[0][j];
         }
-        sonuc[0][i] = total;
+        result[0][i] = total;
     }
 
-
-
-
-   return Vector3f(sonuc[0][0],sonuc[0][1],sonuc[0][2]);
+   return Vector3f(result[0][0], result[0][1], result[0][2]);
 }
+
 void Matrix:: printMatrix() {
 
     for (int i = 0; i < 4; i++){
@@ -168,6 +164,7 @@ void Matrix:: printMatrix() {
         cout << std::endl;
     }
 }
+
 
 
 

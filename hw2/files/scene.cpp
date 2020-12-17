@@ -105,7 +105,8 @@ namespace fst
                 triangles.push_back(Triangle(
                     vertex_data[face.v0_id - 1],
                     vertex_data[face.v1_id - 1] - vertex_data[face.v0_id - 1],
-                    vertex_data[face.v2_id - 1] - vertex_data[face.v0_id - 1]));
+                    vertex_data[face.v2_id - 1] - vertex_data[face.v0_id - 1],
+                    face));
             }
             vector<TransformInfo> transformInfos = getTransformInfos(mesh.transformations);
 
@@ -120,7 +121,8 @@ namespace fst
             triangles.push_back(Triangle(
                 vertex_data[triangle.indices.v0_id - 1],
                 vertex_data[triangle.indices.v1_id - 1] - vertex_data[triangle.indices.v0_id - 1],
-                vertex_data[triangle.indices.v2_id - 1] - vertex_data[triangle.indices.v0_id - 1]));
+                vertex_data[triangle.indices.v2_id - 1] - vertex_data[triangle.indices.v0_id - 1],
+                triangle.indices));
 
             vector<TransformInfo> transformInfos = getTransformInfos(triangle.transformations);
 
@@ -156,6 +158,7 @@ namespace fst
                 temp.radius=sphere.m_radius;
                 temp.isSphere=1;
                 temp.texture_id = sphere.textureId;
+                temp.intersectedSphere = sphere;
                 hit_record = temp;
 
             }
