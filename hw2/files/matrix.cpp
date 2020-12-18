@@ -39,7 +39,10 @@ void Matrix::Translate(float tx,float ty,float tz){
 }
 
 void Matrix::Rotate (float x,float y,float z,float alpha){
-    float rotationMatrix[4][4]={{1,0,0,0},{0,cos(alpha*pi/180), -sin(alpha*pi/180),0},{0,sin(alpha*pi/180),cos(alpha*pi/180),0},{0,0,0,1}};
+    float rotationMatrix[4][4]={  {1,0,0,0}
+                                 ,{0,cos(alpha*pi/180),-sin(alpha*pi/180),0}
+                                 ,{0,sin(alpha*pi/180)
+                                 ,cos(alpha*pi/180),0},{0,0,0,1}};
     findBase(x,y,z);
     Translate(-x,-y,-z);
     rightMultiplyMatrix(baseMatrixduz);
@@ -50,9 +53,10 @@ void Matrix::Rotate (float x,float y,float z,float alpha){
 void Matrix::findBase(float x,float y,float z) const {
     float length=sqrt(x * x + y * y + z * z);
     x/=length, y/=length, z/=length;
-    float min=x<y?x:y;
+    float min=abs(x)<abs(y)?x:y;
+    min=abs(min)<abs(z)?min:z;
     float a,b,c;
-    min=min<z?min:z;
+
     if(min==x){
         a=0,b=-1*z,c=y;
     }

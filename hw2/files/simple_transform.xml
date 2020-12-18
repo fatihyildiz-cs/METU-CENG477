@@ -40,7 +40,7 @@
         <Translation id="3">0 0.5 0</Translation>
         <Scaling id="1">2 2 2</Scaling>
         <Scaling id="2">0.5 0.5 0.5</Scaling>
-        <Rotation id="1">45 0.0 0.0 1.0</Rotation>
+        <Rotation id="1">45 0.0 2 1.0</Rotation>
     </Transformations>
 
     <VertexData>
