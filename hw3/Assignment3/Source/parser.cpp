@@ -2,6 +2,16 @@
 #include "tinyxml2.h"
 #include <sstream>
 #include <stdexcept>
+using parser::Vec3f;
+
+Vec3f calculateFaceNormal(const Vec3f& v0, const Vec3f& v1, const Vec3f& v2) {
+    const Vec3f b_a = v0 - v1;
+    const Vec3f c_a = v0 - v2;
+
+    Vec3f normal = b_a.CrossProduct(c_a).Normalized();
+    return normal;
+}
+
 
 void parser::Scene::loadFromXml(const std::string& filepath)
 {
@@ -227,6 +237,12 @@ void parser::Scene::loadFromXml(const std::string& filepath)
         while (!(stream >> face.v0_id).eof())
         {
             stream >> face.v1_id >> face.v2_id;
+
+            face.normal = calculateFaceNormal(vertex_data[face.v0_id], vertex_data[face.v1_id],
+                           vertex_data[face.v2_id]);
+
+            numberOfFaces++;
+            
             mesh.faces.push_back(face);
         }
         stream.clear();
