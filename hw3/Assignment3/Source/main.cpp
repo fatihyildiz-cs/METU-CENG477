@@ -6,10 +6,6 @@
 
 #include <GLFW/glfw3.h>
 
-
-
-#include <vector.h>
-
 using parser::Vec3f;
 
 //////-------- Global Variables -------/////////
