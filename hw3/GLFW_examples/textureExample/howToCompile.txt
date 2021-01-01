@@ -1,0 +1,1 @@
+gcc -g -o render render.c -lglew32 -lglfw3 -lopengl32 -lglu32 -lgdi32
