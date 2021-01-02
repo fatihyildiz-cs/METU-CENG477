@@ -26,33 +26,63 @@ static void keyCallback(GLFWwindow* window, int key, int scancode, int action, i
 
 void displayScene(){
 
-    bool firstTime = true;
+    static bool firstTime = true;
 
     static int vertexPosDataSizeInBytes;
 
     if(firstTime){
 
         firstTime = false;
-
         vertexPosDataSizeInBytes = scene.vertex_data.size() * 3 * sizeof(GLfloat);
         int indexDataSizeInBytes = scene.numberOfFaces * 3 * sizeof(GLuint);
-        GLuint* indices = new GLuint[scene.numberOfFaces * 3];
-
+        GLuint* indices = scene.indices;
+        GLfloat *vertexPos=scene.vertexPos;
+        GLfloat  * normals=scene.normals;
         GLuint vertexAttribBuffer, indexBuffer;
 
         glGenBuffers(1, &vertexAttribBuffer);
-        glGenBuffers(1, &indexBuffer);
-
         glBindBuffer(GL_ARRAY_BUFFER, vertexAttribBuffer);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
-
         glBufferData(GL_ARRAY_BUFFER, 2*vertexPosDataSizeInBytes, 0, GL_STATIC_DRAW);
+        glBufferSubData(GL_ARRAY_BUFFER, 0, vertexPosDataSizeInBytes, vertexPos);
+        glBufferSubData(GL_ARRAY_BUFFER,vertexPosDataSizeInBytes,vertexPosDataSizeInBytes,normals);
+        
+        glGenBuffers(1, &indexBuffer);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexDataSizeInBytes, indices, GL_STATIC_DRAW);
 
     }
-    
+
     glVertexPointer(3, GL_FLOAT, 0, 0);
     glNormalPointer(GL_FLOAT, 0, (const void*)vertexPosDataSizeInBytes);
+    int offset=0;
+    for(const auto & mesh : scene.meshes){
+
+        const auto material = scene.materials[mesh.material_id];
+
+        GLfloat ambColor[4] = {material.ambient.x, material.ambient.y, material.ambient.z, 1.0};
+        GLfloat diffColor[4] = {material.diffuse.x, material.diffuse.y, material.diffuse.z, 1.0};
+        GLfloat specColor[4] = {material.specular.x, material.specular.y, material.specular.z, 1.0};
+        GLfloat specExp [ 1 ] = {material.phong_exponent};
+
+        glMaterialfv ( GL_FRONT , GL_AMBIENT , ambColor );
+        glMaterialfv ( GL_FRONT , GL_DIFFUSE , diffColor );
+        glMaterialfv ( GL_FRONT , GL_SPECULAR , specColor );
+        glMaterialfv ( GL_FRONT , GL_SHININESS , specExp );
+
+
+
+        if(mesh.mesh_type == "Wireframe"){
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        }
+        else {
+            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        }
+        glDrawElements(GL_TRIANGLES, mesh.faces.size()*3, GL_UNSIGNED_INT, (const void* )(offset*3*sizeof(GLuint)));
+
+        offset = offset + mesh.faces.size();
+        
+    }
+    
 
 }
 
@@ -68,17 +98,6 @@ void clearAndDisplay(){
     // displayOneTriangle();
 }
 
-void displayOneTriangle() {
-    glBegin(GL_TRIANGLES);
-    glColor3f(1.0, 0.0, 0.0); // color state is red
-    glVertex3f(0, 0.5, 0); // first vertex
-    glColor3f(0.0, 1.0, 0.0); // color state is green
-    glVertex3f(-0.5, -0.5, 0); // second vertex
-    glColor3f(0.0, 0.0, 1.0); //color state is blue
-    glVertex3f(0.5, -0.5, 0); // third vertex
-    glEnd();
-}
-
 void initializeDisplay(){
     
     glEnable(GL_DEPTH_TEST);
@@ -86,6 +105,19 @@ void initializeDisplay(){
     glEnableClientState(GL_NORMAL_ARRAY);
     glEnable(GL_LIGHTING);
     glShadeModel(GL_SMOOTH);
+
+    if(scene.culling_enabled == 1){
+
+        glEnable(GL_CULL_FACE);
+
+        if(scene.culling_face == 0){
+            glCullFace(GL_BACK);
+        }
+        else{
+            glCullFace(GL_FRONT);
+        }
+    }
+    
 }
 
 void adjustCamera(){
@@ -109,8 +141,9 @@ void adjustLights(){
 
     const GLfloat ambient[4] = {scene.ambient_light.x, scene.ambient_light.y,
                               scene.ambient_light.z, 1.};
+                              
     const std::vector<parser::PointLight> point_lights = scene.point_lights;
-    cout << "there are " << point_lights.size() << " lights" << endl;
+    
     for (size_t i = 0; i < point_lights.size(); i++) {
         const parser::PointLight light = point_lights[i];
         const GLfloat intensity[4] = {light.intensity.x, light.intensity.y,

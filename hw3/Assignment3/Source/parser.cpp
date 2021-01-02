@@ -12,9 +12,8 @@ Vec3f calculateFaceNormal(const Vec3f& v0, const Vec3f& v1, const Vec3f& v2) {
     return normal;
 }
 
-
 void parser::Scene::loadFromXml(const std::string& filepath)
-{
+{   std::vector<std::vector<Vec3f>>normalstemp;
     tinyxml2::XMLDocument file;
     std::stringstream stream;
 
@@ -85,6 +84,8 @@ void parser::Scene::loadFromXml(const std::string& filepath)
     stream >> camera.position.x >> camera.position.y >> camera.position.z;
     stream >> camera.gaze.x >> camera.gaze.y >> camera.gaze.z;
     stream >> camera.up.x >> camera.up.y >> camera.up.z;
+    Vec3f right = camera.gaze.CrossProduct(camera.up).Normalized();
+    camera.up = right.CrossProduct(camera.gaze);
     stream >> camera.near_plane.x >> camera.near_plane.y >> camera.near_plane.z >> camera.near_plane.w;
     stream >> camera.near_distance;
     stream >> camera.far_distance;
@@ -189,7 +190,7 @@ void parser::Scene::loadFromXml(const std::string& filepath)
     element = root->FirstChildElement("Objects");
     element = element->FirstChildElement("Mesh");
     Mesh mesh;
-    
+
     while (element)
     {
         child = element->FirstChildElement("MeshType");
@@ -198,6 +199,7 @@ void parser::Scene::loadFromXml(const std::string& filepath)
         child = element->FirstChildElement("Material");
         stream << child->GetText() << std::endl;
         stream >> mesh.material_id;
+        mesh.material_id--;
 
         //Get Transformations in order
         mesh.transformations.clear();
@@ -231,25 +233,72 @@ void parser::Scene::loadFromXml(const std::string& filepath)
         
 
         stream.clear();
-        child = element->FirstChildElement("Faces");
+
+
+    child = element->FirstChildElement("Faces");
         stream << child->GetText() << std::endl;
         Face face;
+        normalstemp.resize(vertex_data.size());
+        normals=new float [vertex_data.size()*3];
+        vertexPos=new float[vertex_data.size()*3];
+
         while (!(stream >> face.v0_id).eof())
         {
             stream >> face.v1_id >> face.v2_id;
 
-            face.normal = calculateFaceNormal(vertex_data[face.v0_id], vertex_data[face.v1_id],
-                           vertex_data[face.v2_id]);
-
+            face.normal = calculateFaceNormal(vertex_data[--face.v0_id], vertex_data[--face.v1_id],
+            vertex_data[--face.v2_id]);
+            normalstemp[face.v0_id].push_back(face.normal);
+            normalstemp[face.v1_id].push_back(face.normal);
+            normalstemp[face.v2_id].push_back(face.normal);
+            
             numberOfFaces++;
             
             mesh.faces.push_back(face);
+
         }
+
         stream.clear();
 
         meshes.push_back(mesh);
         mesh.faces.clear();
         element = element->NextSiblingElement("Mesh");
+    }
+
+        int k=0;
+        indices=new unsigned int[numberOfFaces*3];
+        for(int i=0;i<meshes.size();i++){
+            for(int j=0;j<meshes[i].faces.size();j++){
+                indices[k++] =meshes[i].faces[j].v0_id;
+                indices[k++] =meshes[i].faces[j].v1_id;
+                indices[k++] =meshes[i].faces[j].v2_id;
+
+            }
+
+        }
+
+
+
+    int size=normalstemp.size();
+    for(int i=0;i<size;i++){
+        Vec3f ort;
+        int sizevec=normalstemp[i].size();
+        for(int j=0;j<sizevec;j++){
+            ort=ort+normalstemp[i][j];
+
+        }
+        if(sizevec==0) {
+            sizevec++;
+            //  std::cout<<i<<std::endl;
+        }
+        ort=ort/sizevec;
+        normals[3*i]=ort.x;
+        normals[3*i+1]=ort.y;
+        normals[3*i+2]=ort.z;
+
+        vertexPos[3*i]=vertex_data[i].x;
+        vertexPos[3*i+1]=vertex_data[i].y;
+        vertexPos[3*i+2]=vertex_data[i].z;
     }
     stream.clear();
 

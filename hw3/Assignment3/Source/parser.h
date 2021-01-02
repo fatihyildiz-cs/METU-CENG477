@@ -72,6 +72,7 @@ namespace parser
         std::vector<Face> faces;
         std::vector<Transformation> transformations;
         std::string mesh_type;
+
     };
 
     struct Scene
@@ -89,6 +90,9 @@ namespace parser
         std::vector<Vec3f> scalings;
         std::vector<Vec4f> rotations;
         std::vector<Mesh> meshes;
+        float*normals;
+        float *vertexPos;
+        unsigned  int * indices;
         int numberOfFaces =0;
         //Functions
         void loadFromXml(const std::string& filepath);
