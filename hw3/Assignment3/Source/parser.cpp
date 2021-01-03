@@ -8,7 +8,7 @@ Vec3f calculateFaceNormal(const Vec3f& v0, const Vec3f& v1, const Vec3f& v2) {
     const Vec3f b_a = v0 - v1;
     const Vec3f c_a = v0 - v2;
 
-    Vec3f normal = b_a.CrossProduct(c_a).Normalized();
+    Vec3f normal =  b_a.CrossProduct(c_a).Normalize();
     return normal;
 }
 
@@ -235,7 +235,11 @@ void parser::Scene::loadFromXml(const std::string& filepath)
         stream.clear();
 
 
-    child = element->FirstChildElement("Faces");
+
+
+
+
+        child = element->FirstChildElement("Faces");
         stream << child->GetText() << std::endl;
         Face face;
         normalstemp.resize(vertex_data.size());
@@ -247,14 +251,15 @@ void parser::Scene::loadFromXml(const std::string& filepath)
             stream >> face.v1_id >> face.v2_id;
 
             face.normal = calculateFaceNormal(vertex_data[--face.v0_id], vertex_data[--face.v1_id],
-            vertex_data[--face.v2_id]);
+                           vertex_data[--face.v2_id]);
             normalstemp[face.v0_id].push_back(face.normal);
             normalstemp[face.v1_id].push_back(face.normal);
             normalstemp[face.v2_id].push_back(face.normal);
-            
             numberOfFaces++;
             
             mesh.faces.push_back(face);
+
+
 
         }
 
@@ -265,21 +270,23 @@ void parser::Scene::loadFromXml(const std::string& filepath)
         element = element->NextSiblingElement("Mesh");
     }
 
-        int k=0;
-        indices=new unsigned int[numberOfFaces*3];
-        for(int i=0;i<meshes.size();i++){
-            for(int j=0;j<meshes[i].faces.size();j++){
-                indices[k++] =meshes[i].faces[j].v0_id;
-                indices[k++] =meshes[i].faces[j].v1_id;
-                indices[k++] =meshes[i].faces[j].v2_id;
+     int k=0;
 
-            }
-
+      indices=new unsigned int[numberOfFaces*3];
+       for(int i=0;i<meshes.size();i++){
+        for(int j=0;j<meshes[i].faces.size();j++) {
+            indices[k++] = meshes[i].faces[j].v0_id;
+            indices[k++] = meshes[i].faces[j].v1_id;
+            indices[k++] = meshes[i].faces[j].v2_id;
         }
+}
 
 
 
-    int size=normalstemp.size();
+
+int size=normalstemp.size();
+    k=0;
+    int t=0;
     for(int i=0;i<size;i++){
         Vec3f ort;
         int sizevec=normalstemp[i].size();
@@ -291,14 +298,14 @@ void parser::Scene::loadFromXml(const std::string& filepath)
             sizevec++;
             //  std::cout<<i<<std::endl;
         }
-        ort=ort/sizevec;
-        normals[3*i]=ort.x;
-        normals[3*i+1]=ort.y;
-        normals[3*i+2]=ort.z;
+        ort=ort/(sizevec);
+        normals[t++]=ort.x;
+        normals[t++]=ort.y;
+        normals[t++]=ort.z;
 
-        vertexPos[3*i]=vertex_data[i].x;
-        vertexPos[3*i+1]=vertex_data[i].y;
-        vertexPos[3*i+2]=vertex_data[i].z;
+        vertexPos[k++]=vertex_data[i].x;
+        vertexPos[k++]=vertex_data[i].y;
+        vertexPos[k++]=vertex_data[i].z;
     }
     stream.clear();
 

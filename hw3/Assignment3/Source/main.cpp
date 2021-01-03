@@ -24,6 +24,29 @@ static void keyCallback(GLFWwindow* window, int key, int scancode, int action, i
         glfwSetWindowShouldClose(window, GLFW_TRUE);
 }
 
+void transformationinfo(const std::vector<parser::Transformation> & trans) {
+   glPushMatrix();
+    parser::Vec3f translationvec;
+    parser::Vec3f scalingvec;
+    parser::Vec4f rotationvec;
+    int size=trans.size();
+    size--;
+    for(int i=size;i>-1;i--){
+        if(trans[i].transformation_type=="Translation"){
+            translationvec=scene.translations[trans[i].id-1];
+            glTranslatef(translationvec.x,translationvec.y,translationvec.z);
+        }
+        else if(trans[i].transformation_type=="Scaling"){
+            scalingvec=scene.scalings[trans[i].id-1];
+            glScalef(scalingvec.x,scalingvec.y,scalingvec.z);
+
+        }
+        else if (trans[i].transformation_type=="Rotation"){
+            rotationvec=scene.rotations[trans[i].id-1];
+            glRotatef(rotationvec.x,rotationvec.y,rotationvec.z,rotationvec.w);
+        }
+    }
+}
 void displayScene(){
 
     static bool firstTime = true;
@@ -45,7 +68,7 @@ void displayScene(){
         glBufferData(GL_ARRAY_BUFFER, 2*vertexPosDataSizeInBytes, 0, GL_STATIC_DRAW);
         glBufferSubData(GL_ARRAY_BUFFER, 0, vertexPosDataSizeInBytes, vertexPos);
         glBufferSubData(GL_ARRAY_BUFFER,vertexPosDataSizeInBytes,vertexPosDataSizeInBytes,normals);
-        
+
         glGenBuffers(1, &indexBuffer);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexDataSizeInBytes, indices, GL_STATIC_DRAW);
@@ -53,7 +76,8 @@ void displayScene(){
     }
 
     glVertexPointer(3, GL_FLOAT, 0, 0);
-    glNormalPointer(GL_FLOAT, 0, (const void*)vertexPosDataSizeInBytes);
+    glNormalPointer(GL_FLOAT, 0, (void*)vertexPosDataSizeInBytes);
+
     int offset=0;
     for(const auto & mesh : scene.meshes){
 
@@ -77,10 +101,11 @@ void displayScene(){
         else {
             glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         }
-        glDrawElements(GL_TRIANGLES, mesh.faces.size()*3, GL_UNSIGNED_INT, (const void* )(offset*3*sizeof(GLuint)));
+        transformationinfo(mesh.transformations);
+        glDrawElements(GL_TRIANGLES, mesh.faces.size()*3, GL_UNSIGNED_INT, (const void *)(offset*3*sizeof(GLuint)));
 
         offset = offset + mesh.faces.size();
-        
+        glPopMatrix();
     }
     
 
