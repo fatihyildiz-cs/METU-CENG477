@@ -19,7 +19,9 @@ GLuint idMVPMatrix;
 GLuint idVertexBuffer;
 GLuint idIndexBuffer;
 
+// these values will be loaded @initTexture function call.
 int textureWidth, textureHeight;
+
 float heightFactor = 10.0f;
 
 GLFWmonitor *monitor;
@@ -38,11 +40,10 @@ GLfloat aspectRatio = 1;
 GLfloat nearPlaneDistance = 0.1;
 GLfloat farPlaneDistance = 1000;
 
-bool updateViewPort = false;
-int nowDisplayWidth = 0;
-int nowDisplayHeight = 0;
-GLFWmonitor* primaryMonitor;
-const GLFWvidmode* vidMode;
+bool viewPortChanged = false;
+bool fullscreenOn = false;
+int displayWidth = 0;
+int displayHeight = 0;
 
 struct Camera{
   glm::vec3 position;
@@ -55,8 +56,6 @@ struct Camera{
 Camera camera;
 
 glm::vec3 lightPos;
-GLuint depthMapFBO;
-GLuint depthCubemap;
 bool lightPosFlag = false;
 
 static void errorCallback(int error, const char* description)
@@ -110,6 +109,77 @@ static void keyCallback(GLFWwindow* window, int key, int scancode, int action, i
         glUniform3fv(lightPosLocation,1, &lightPos[0]);
     }
 
+    // PUT THE CAMERA TO INITIAL POSITION AND SPEED
+    if (key == GLFW_KEY_I && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.position = glm::vec3(textureWidth / 2, textureWidth / 10, (-1) * (textureWidth / 4));
+        camera.up = glm::vec3(0, 1, 0);
+        camera.gaze = glm::vec3(0, 0, 1);
+        camera.left = glm::cross(camera.up, camera.gaze);
+        camera.speed = 0.0f;
+    }
+
+    if (key == GLFW_KEY_Q && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.position.x -= 1;
+    }
+    if (key == GLFW_KEY_E && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.position.x += 1;
+    }
+
+    if (key == GLFW_KEY_Y && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.speed += 0.01f;
+    }
+
+    if (key == GLFW_KEY_H && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.speed -= 0.01f;
+    }
+
+    // STOP THE CAMERA
+    if (key == GLFW_KEY_X && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.speed = 0.0f;
+    }
+
+    // PITCH ANGLE
+    if (key == GLFW_KEY_S && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.gaze = glm::rotate(camera.gaze, 0.05f, camera.left);
+        camera.up = glm::rotate(camera.up, 0.05f, camera.left);
+    }
+
+    if (key == GLFW_KEY_W && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.gaze = glm::rotate(camera.gaze, -0.05f, camera.left);
+        camera.up = glm::rotate(camera.up, -0.05f, camera.left);
+    }
+
+    // YAW ANGLE
+    if (key == GLFW_KEY_A && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.gaze = glm::rotate(camera.gaze, 0.05f, camera.up);
+        camera.left = glm::rotate(camera.left, 0.05f, camera.up);
+    }
+
+    if (key == GLFW_KEY_D && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+        camera.gaze = glm::rotate(camera.gaze, -0.05f, camera.up);
+        camera.left = glm::rotate(camera.left, -0.05f, camera.up);
+    }
+
+    // TOGGLE FULLSCREEN MODE
+    if (key == GLFW_KEY_P && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+
+        if (fullscreenOn) {
+            displayWidth = 1000;
+            displayHeight = 1000;
+            glfwSetWindowMonitor(window, nullptr, 0, 0, 1000, 1000, 0);
+
+            fullscreenOn = false;
+        } 
+        else {
+            glfwSetWindowMonitor(window, monitor ,0,0, vidmode->width, vidmode->height,vidmode->refreshRate);
+            displayWidth = vidmode->width;
+            displayHeight = vidmode->height;
+
+            fullscreenOn = true;
+        }
+        viewPortChanged = true;
+    }
+
 }
 
 void adjustCamera() {
@@ -117,12 +187,12 @@ void adjustCamera() {
     glm::mat4 projectionMatrix = glm::perspective(fieldOfView, aspectRatio, nearPlaneDistance, farPlaneDistance);
     glm::mat4 viewMatrix = glm::lookAt(camera.position, camera.position + glm::vec3(camera.gaze.x * nearPlaneDistance, camera.gaze.y * nearPlaneDistance, camera.gaze.z * nearPlaneDistance), camera.up);
     glm::mat4 modelMatrix = glm::mat4(1.0f);
-    glm::mat4 MVP = projectionMatrix * viewMatrix * modelMatrix;
+    glm::mat4 modelViewProjection = projectionMatrix * viewMatrix * modelMatrix;
   
-    GLint modelViewProjectionMatrixLocation = glGetUniformLocation(idProgramShader, "MVP");
-    glUniformMatrix4fv(modelViewProjectionMatrixLocation, 1, GL_FALSE, &MVP[0][0]);
+    GLint modelViewProjectionMatrixLocation = glGetUniformLocation(idProgramShader, "modelViewProjection");
+    glUniformMatrix4fv(modelViewProjectionMatrixLocation, 1, GL_FALSE, &modelViewProjection[0][0]);
 
-    GLint modelViewMatrixLocation = glGetUniformLocation(idProgramShader, "MV");
+    GLint modelViewMatrixLocation = glGetUniformLocation(idProgramShader, "modelView");
     glUniformMatrix4fv(modelViewMatrixLocation, 1, GL_FALSE, &viewMatrix[0][0]);
 
     GLint normalMatrixLocation = glGetUniformLocation(idProgramShader, "normalMatrix");
@@ -267,8 +337,16 @@ int main(int argc, char *argv[]) {
 
   monitor = glfwGetPrimaryMonitor();
   vidmode = (glfwGetVideoMode(monitor));
+  glfwGetWindowSize( win, &displayWidth, &displayHeight );
 
   while(!glfwWindowShouldClose(win)) {
+
+    //BU KISIM GEREKLI MI EMIN OLAMADIM.
+     if (viewPortChanged){
+
+         glViewport( 0, 0, displayWidth, displayHeight);
+         viewPortChanged = false;
+     }
 
     clearColorDepthStencilBuffers();
 
