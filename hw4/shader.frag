@@ -1,28 +1,27 @@
-#version 410
+#version 330
 
-// Output Color
-out vec4 color;
 
 uniform mat4 MVP; // ModelViewProjection Matrix
 uniform mat4 MV; // ModelView idMVPMatrix
 uniform vec4 cameraPosition;
 
 // Texture-related data;
-uniform sampler2D rgbTexture;
-uniform int widthTexture;
-uniform int heightTexture;
+uniform sampler2D textureSamplerForColor;
+uniform int textureWidth;
+uniform int textureHeight;
 
 // Data from Vertex Shader
-in vec2 textureCoordinate;
-in vec3 vertexNormal; // For Lighting computation
-in vec3 ToLightVector; // Vector from Vertex to Light;
-in vec3 ToCameraVector; // Vector from Vertex to Camera;
+varying vec2 textureCoord;
+varying vec3 vertexNormal; // For Lighting computation
+varying vec3 ToLightVector; // Vector from Vertex to Light;
+varying vec3 ToCameraVector; // Vector from Vertex to Camera;
+
 
 void main() {
 
   // Assignment Constants below
   // get the texture color
-  vec4 textureColor = texture(rgbTexture, textureCoordinate);
+  vec4 textureColor = texture(textureSamplerForColor, textureCoord);
 
   // apply Phong shading by using the following parameters
   vec4 ka = vec4(0.25,0.25,0.25,1.0); // reflectance coeff. for ambient
@@ -33,13 +32,21 @@ void main() {
   vec4 ks = vec4(1.0, 1.0, 1.0, 1.0); // reflectance coeff. for specular
   int specExp = 100; // specular exponent
 
+  float cosTheta = clamp(dot(vertexNormal, ToLightVector),0,1);
+
+  vec3 h = normalize(ToLightVector + ToCameraVector);
+  float cosAlpha = clamp(dot(vertexNormal, h),0,1);
+
+
   // compute ambient component
-  vec4 ambient = vec4(0, 0, 0, 0);
+  vec4 ambient = ka * Ia;
   // compute diffuse component
-  vec4 diffuse = vec4(0, 0, 0, 0);
+  vec4 diffuse = kd * cosTheta * Id;
   // compute specular component
-  vec4 specular = vec4(0, 0, 0, 0);
+  vec4 specular = ks * pow(cosAlpha,specExp) * Is;
 
   // compute the color using the following equation
-  color = vec4(clamp( textureColor.xyz * vec3(ambient + diffuse + specular), 0.0, 1.0), 1.0);
+   gl_FragColor = vec4(clamp( textureColor.xyz * vec3(ambient + diffuse + specular), 0.0, 1.0), 1.0);
+  //color =  vec4(clamp( textureColor.xyz , 0.0, 1.0), 1.0);
+
 }
