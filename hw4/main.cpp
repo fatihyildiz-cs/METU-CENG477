@@ -182,7 +182,7 @@ static void keyCallback(GLFWwindow* window, int key, int scancode, int action, i
 
 }
 
-void adjustCamera() {
+void cameraSetup() {
 
     glm::mat4 projectionMatrix = glm::perspective(fieldOfView, aspectRatio, nearPlaneDistance, farPlaneDistance);
     glm::mat4 viewMatrix = glm::lookAt(camera.position, camera.position + glm::vec3(camera.gaze.x * nearPlaneDistance, camera.gaze.y * nearPlaneDistance, camera.gaze.z * nearPlaneDistance), camera.up);
@@ -195,9 +195,9 @@ void adjustCamera() {
     GLint modelViewMatrixLocation = glGetUniformLocation(idProgramShader, "modelView");
     glUniformMatrix4fv(modelViewMatrixLocation, 1, GL_FALSE, &viewMatrix[0][0]);
 
-    GLint normalMatrixLocation = glGetUniformLocation(idProgramShader, "normalMatrix");
-    glm::mat4 normal_matrix = glm::transpose(glm::inverse(viewMatrix));
-    glUniformMatrix4fv(normalMatrixLocation, 1, GL_FALSE, &normal_matrix[0][0]);
+    GLint normalMatrixLocation = glGetUniformLocation(idProgramShader, "invtransmatrix");
+    glm::mat4 invtransview = glm::transpose(glm::inverse(viewMatrix));
+    glUniformMatrix4fv(normalMatrixLocation, 1, GL_FALSE, &invtransview[0][0]);
     
     GLint cameraPositionLocation = glGetUniformLocation(idProgramShader, "cameraPosition");
     glUniform3fv(cameraPositionLocation, 1, &camera.position[0]);
@@ -206,7 +206,7 @@ void adjustCamera() {
 
 // THIS CREATES THE TRIANGLES
 
-void createMeshes() {
+void meshTerrain() {
 
     vertexCount = 6 * textureWidth * textureHeight;
     int textureCoordCount=6*textureHeight*textureWidth;
@@ -243,6 +243,17 @@ void clearColorDepthStencilBuffers(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 }
+void reshape(GLFWwindow* window, int width, int height)
+{
+    width=(width<=0)?1:width;
+    height=(height<=0)?1:height;
+    glViewport(0, 0, width, height);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(-1,1,-1,1,-1,1);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+}
 
 void sendVertexData(){
     glEnableVertexAttribArray(0);
@@ -252,7 +263,8 @@ void sendVertexData(){
     glVertexAttribPointer(1, 2, GL_FLOAT, false, 0, textureCoordData);
     glTexCoordPointer(2,GL_FLOAT,0,textureCoordData);
     glDrawArrays(GL_TRIANGLES, 0, vertexCount);
-
+    glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
 }
 
 void sendUniformValuesToShaders(){
@@ -319,21 +331,21 @@ int main(int argc, char *argv[]) {
   glUseProgram(idProgramShader);
 
   glfwSetKeyCallback(win, keyCallback);
-  
-  initTexture(argv[1], argv[2], &textureWidth, &textureHeight);
+  glfwSetWindowSizeCallback(win, reshape);
+    initTexture(argv[1], argv[2], &textureWidth, &textureHeight);
+    glEnable(GL_DEPTH_TEST);
 
-  glEnable(GL_DEPTH_TEST);
 
   // initial viewport setting
   glViewport(0,0, widthWindow, heightWindow);
-  
+
   camera.position = glm::vec3(textureWidth / 2, textureWidth / 10, (-1) * (textureWidth / 4));
 
-  adjustCamera();
+  cameraSetup();
 
   sendUniformValuesToShaders();
 
-  createMeshes();
+  meshTerrain();
 
   monitor = glfwGetPrimaryMonitor();
   vidmode = (glfwGetVideoMode(monitor));
@@ -341,7 +353,7 @@ int main(int argc, char *argv[]) {
 
   while(!glfwWindowShouldClose(win)) {
 
-    //BU KISIM GEREKLI MI EMIN OLAMADIM.
+
      if (viewPortChanged){
 
          glViewport( 0, 0, displayWidth, displayHeight);
@@ -352,9 +364,9 @@ int main(int argc, char *argv[]) {
 
     camera.position += camera.gaze * camera.speed;
 
-    adjustCamera();
-
+    cameraSetup();
     sendVertexData();
+
 
     glfwSwapBuffers(win);
 

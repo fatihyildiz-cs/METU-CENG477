@@ -5,7 +5,7 @@ layout(location = 1) in vec2 textcoord;
 
 uniform mat4 modelViewProjection;
 uniform mat4 modelView;
-uniform mat4 normalMatrix;
+uniform mat4 invtransmatrix;
 uniform vec4 cameraPosition;
 uniform float heightFactor;
 
@@ -16,10 +16,10 @@ uniform int textureHeight;
 uniform vec3 lightPosition;
 
 
-varying vec2 textureCoord;
-varying vec3 vertexNormal;
-varying vec3 ToLightVector;
-varying vec3 ToCameraVector;
+out vec2 textureCoordinate; // For texture-color
+out vec3 vertexNormal; // For Lighting computation
+out vec3 ToLightVector; // Vector from Vertex to Light;
+out vec3 ToCameraVector; // Vector from Vertex to Camera;
 
 
 float getY(vec3 neighbor,float i,float j){
@@ -41,7 +41,7 @@ void main()
     int k3i=0,k3j=0;
     int k4i=0,k4j=0;
     vec3 vertpos = vertposition;
-    textureCoord = textcoord;
+    textureCoordinate = textcoord;
     vec3 neighbor1 ,neighbor2,neighbor3,neighbor4,neighbor5,neighbor6;
     vec3 v1 ,v2,v3,v4 ,v5,v6;
 
@@ -220,7 +220,7 @@ void main()
 
     ToLightVector = normalize(vec3(modelView*vec4(lightPosition - vertpos, 0)));
     ToCameraVector = normalize(vec3(modelView*(vec4(vec3(cameraPosition) - vertpos, 0))));
-    vertexNormal = normalize(vec3(normalMatrix*vec4(normal,0)));
+    vertexNormal = normalize(vec3(invtransmatrix*vec4(normal,0)));
 
 
     gl_Position = modelViewProjection*vec4(vertpos,1);

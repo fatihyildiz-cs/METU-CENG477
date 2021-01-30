@@ -1,23 +1,22 @@
 #version 330
 
-
-uniform vec4 cameraPosition;
-
-uniform sampler2D textureSamplerForColor;
 uniform int textureWidth;
 uniform int textureHeight;
+uniform vec4 cameraPosition;
+uniform sampler2D textureSamplerForColor;
 
 
-varying vec2 textureCoord;
-varying vec3 vertexNormal;
-varying vec3 ToLightVector;
-varying vec3 ToCameraVector;
 
+
+in vec2 textureCoordinate;
+in vec3 vertexNormal; // For Lighting computation
+in vec3 ToLightVector; // Vector from Vertex to Light;
+in vec3 ToCameraVector;
 
 void main() {
 
 
-  vec4 textureColor = texture(textureSamplerForColor, textureCoord);
+  vec4 textureColor = texture(textureSamplerForColor, textureCoordinate);
 
 
   vec4 ka = vec4(0.25,0.25,0.25,1.0);
@@ -28,16 +27,12 @@ void main() {
   vec4 ks = vec4(1.0, 1.0, 1.0, 1.0);
   int specExp = 100;
 
-  float cosTheta = clamp(dot(vertexNormal, ToLightVector),0,1);
-
+  float aci1 = clamp(dot(vertexNormal, ToLightVector),0,1);
   vec3 halfvec = normalize(ToLightVector + ToCameraVector);
-  float cosAlpha = clamp(dot(vertexNormal, halfvec),0,1);
-
-
-
+  float aci2 = clamp(dot(vertexNormal, halfvec),0,1);
   vec4 ambient = ka * Ia;
-  vec4 diffuse = kd * cosTheta * Id;
-  vec4 specular = ks * pow(cosAlpha,specExp) * Is;
+  vec4 diffuse = kd * aci1 * Id;
+  vec4 specular = ks * pow(aci2,specExp) * Is;
    gl_FragColor = vec4(clamp( textureColor.xyz * vec3(ambient + diffuse + specular), 0.0, 1.0), 1.0);
 
 
