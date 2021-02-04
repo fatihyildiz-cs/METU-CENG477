@@ -339,7 +339,7 @@ int main(int argc, char *argv[]) {
   // initial viewport setting
   glViewport(0,0, widthWindow, heightWindow);
 
-  camera.position = glm::vec3(textureWidth / 2, textureWidth / 10, (-1) * (textureWidth / 4));
+  camera.position = glm::vec3(textureWidth / 2., textureWidth / 10., (-1) * (textureWidth / 4.));
 
   cameraSetup();
 

@@ -43,7 +43,7 @@ void main()
     vec3 vertpos = vertposition;
     textureCoordinate = textcoord;
     vec3 neighbor1 ,neighbor2,neighbor3,neighbor4,neighbor5,neighbor6;
-    vec3 v1 ,v2,v3,v4 ,v5,v6;
+    vec3 vert1 ,vert2,vert3,vert4 ,vert5,vert6;
 
     vertpos.y=getY(vertpos,0,0);
 
@@ -58,10 +58,10 @@ void main()
          neighbor1.y = getY(neighbor1, 1, 0);
          neighbor2.y = getY(neighbor2, 0, 1);
 
-         v1 = vertpos - neighbor1;
-         v2 = neighbor2 - neighbor1;
+         vert1 = vertpos - neighbor1;
+         vert2 = neighbor2 - neighbor1;
 
-         normal = normalize(cross(v1, v2));
+         normal = normalize(cross(vert1, vert2));
      }
     else if (vertposition.z == textureHeight - 1) {
 
@@ -73,12 +73,12 @@ void main()
      neighbor2.y = getY(neighbor2, 1, -1);
      neighbor3.y = getY(neighbor3, 0, -1);
 
-     v1 = neighbor1 - vertposition;
-     v2 = neighbor2 - vertposition;
-     v3 = neighbor3 - vertposition;
+     vert1 = neighbor1 - vertposition;
+     vert2 = neighbor2 - vertposition;
+     vert3 = neighbor3 - vertposition;
 
-     normal1= cross(v2, v1);
-     normal2= cross(v3, v2);
+     normal1= cross(vert2, vert1);
+     normal2= cross(vert3, vert2);
 
      normal = normalize(normal1+normal2);
  }
@@ -91,10 +91,10 @@ void main()
             neighbor1.y = getY(neighbor1, -1, 0);
             neighbor2.y = getY(neighbor2, 0, -1);
 
-            v1 = vertpos - neighbor1;
-            v2 = neighbor2 - neighbor1;
+            vert1 = vertpos - neighbor1;
+            vert2 = neighbor2 - neighbor1;
 
-            normal = normalize(cross(v1, v2));
+            normal = normalize(cross(vert1, vert2));
 
      }
 
@@ -106,18 +106,17 @@ void main()
            neighbor1.y = getY(neighbor1, -1, 0);
            neighbor2.y = getY(neighbor2, -1, 1);
            neighbor3.y = getY(neighbor3, 0, 1);
-           v1 = neighbor1 - vertpos;
-           v2 = neighbor2 - vertpos;
-           v3 = neighbor3 - vertpos;
+           vert1 = neighbor1 - vertpos;
+           vert2 = neighbor2 - vertpos;
+           vert3 = neighbor3 - vertpos;
 
-           normal1 = cross(v1, v2);
-           normal2= cross(v2, v3);
+           normal1 = cross(vert1, vert2);
+           normal2= cross(vert2, vert3);
 
            normal = normalize(normal1+normal2);
      }
 }
-
-    else if(((vertposition.z == 0 || vertposition.z == textureHeight-1)  && vertposition.x > 0) || ((vertposition.x == 0 || vertposition.x == textureWidth - 1) && vertposition.z > 0)) {
+    if(((vertposition.z == 0 || vertposition.z == textureHeight-1)  && vertposition.x > 0) || ((vertposition.x == 0 || vertposition.x == textureWidth - 1) && vertposition.z > 0)) {
 
         if(vertposition.z == textureHeight - 1) {
 
@@ -130,7 +129,19 @@ void main()
             k4i=1;
             k4j=0;
 
-        } else if(vertposition.z == 0){
+        }
+        else if(vertposition.x == textureWidth - 1) {
+
+            k1i=0;
+            k1j=1;
+            k2i=-1;
+            k2j=1;
+            k3i=-1;
+            k3j=0;
+            k4i=0;
+            k4j=-1;
+        }
+        else if(vertposition.z == 0){
            k1i=1;
             k1j=0;
             k2i=0;
@@ -142,21 +153,11 @@ void main()
         } else if(vertposition.x == 0){
 
             k1i=0;
-            k1j=1;
-            k2i=1;
-            k2j=0;
-            k3i=1;
-            k3j=-1;
-            k4i=0;
-            k4j=-1;
-        } else if(vertposition.x == textureWidth - 1) {
-
-            k1i=0;
             k1j=-1;
-            k2i=-1;
-            k2j=0;
-            k3i=-1;
-            k3j=1;
+            k2i=1;
+            k2j=-1;
+            k3i=1;
+            k3j=0;
             k4i=0;
             k4j=1;
         }
@@ -170,14 +171,14 @@ void main()
         neighbor4.y = getY(neighbor4,k4i,k4j);
 
 
-        v1 = neighbor1 - vertpos;
-        v2 = neighbor2 - vertpos;
-        v3 = neighbor3 - vertpos;
-        v4 = neighbor4 - vertpos;
+        vert1 = neighbor1 - vertpos;
+        vert2 = neighbor2 - vertpos;
+        vert3 = neighbor3 - vertpos;
+        vert4 = neighbor4 - vertpos;
 
-        normal1 = cross(v2,v1);
-        normal2 = cross(v3,v2);
-        normal3 = cross(v4,v3);
+        normal1 = normalize(cross(vert2,vert1));
+        normal2 = normalize(cross(vert3,vert2));
+        normal3 = normalize(cross(vert4,vert3));
 
         normal = normalize(normal1+normal2+normal3);
     }
@@ -196,19 +197,19 @@ void main()
         neighbor5.y = getY(neighbor5,1,-1);
         neighbor6.y = getY(neighbor6,0,-1);
 
-        v1 = neighbor1 - vertpos;
-        v2 = neighbor2- vertpos;
-        v3 = neighbor3 - vertpos;
-        v4 = neighbor4 - vertpos;
-        v5 = neighbor5 - vertpos;
-        v6 = neighbor6 - vertpos;
+        vert1 = neighbor1 - vertpos;
+        vert2 = neighbor2- vertpos;
+        vert3 = neighbor3 - vertpos;
+        vert4 = neighbor4 - vertpos;
+        vert5 = neighbor5 - vertpos;
+        vert6 = neighbor6 - vertpos;
 
-        normal1 = cross(v1,v2);
-        normal2 = cross(v2,v3);
-        normal3 = cross(v3,v4);
-        normal4 = cross(v4,v5);
-        normal5 = cross(v5,v6);
-        normal6 = cross(v6,v1);
+        normal1 = normalize(cross(vert1,vert2));
+        normal2 = normalize(cross(vert2,vert3));
+        normal3 = normalize(cross(vert3,vert4));
+        normal4 = normalize(cross(vert4,vert5));
+        normal5 = normalize(cross(vert5,vert6));
+        normal6 = normalize(cross(vert6,vert1));
 
 
        normal = normalize(normal1 + normal2 + normal3 + normal4 +  normal5 + normal6);
