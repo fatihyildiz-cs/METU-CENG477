@@ -10,7 +10,7 @@ HW3: An OpenGL program to render a given scene.
 
 HW4: An OpenGL program to render flat Earth model using vertex and fragment shaders to display a texture image as a height map to fly through the scene interactively by processing keyboard input.
 
-To run the HW4, download the source code into a linux machine and
+To run the HW4, download the source code into a linux machine that has GLFW and GLEW installed and
 
 $ ./run.sh
 
