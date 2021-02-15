@@ -2,7 +2,7 @@
 
 These are all of the material used for CENG477 Computer Graphics class at 2020/2021 Fall at METU.
 
-HW1: Implementation of a basic ray tracer that simulates the propagation of light in the real world.
+HW1: Implementation of a ray tracer that simulates the propagation of light in the real world.
 
 HW2: Extension of the basic ray tracer in HW1 with texture mapping and transformations.
 
